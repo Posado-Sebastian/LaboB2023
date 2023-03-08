@@ -10,23 +10,13 @@ public class DiaLaboral {
         dia = entrada.nextLine();
         switch (dia.toLowerCase()){
             case "domingo":
-                System.out.println("No es un dia laboral");
-                break;
             case "sabado":
                 System.out.println("No es un dia laboral");
                 break;
             case "lunes":
-                System.out.println("Es un dia laboral");
-                break;
             case "martes":
-                System.out.println("Es un dia laboral");
-                break;
             case "miercoles":
-                System.out.println("Es un dia laboral");
-                break;
             case "jueves":
-                System.out.println("Es un dia laboral");
-                break;
             case "viernes":
                 System.out.println("Es un dia laboral");
                 break;
