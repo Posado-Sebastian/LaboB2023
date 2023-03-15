@@ -1,11 +1,13 @@
 public class Coche {
-    String marca;
-    String modelo;
-    String color;
+    private String marca;
+    private String modelo;
+    private String color;
+    private int velocidad;
     public Coche(){
         this.marca="n/a";
         this.modelo="n/a";
         this.color="n/a";
+        this.velocidad=0;
     }
     public String getColor() {
         return color;
@@ -19,6 +21,8 @@ public class Coche {
         return modelo;
     }
 
+    public int getVelocidad() { return velocidad; }
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -29,5 +33,19 @@ public class Coche {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public void setVelocidad(int velocidad) { this.velocidad = velocidad; }
+
+    public int acelerar(int velocidad){
+        velocidad = velocidad + 2;
+        return velocidad;
+    }
+    public int frenar(int velocidad){
+        velocidad = 0;
+        return velocidad;
+    }
+    public void mostrarVelocidad(){
+        System.out.println("la velocidad del auto es: " + velocidad);
     }
 }

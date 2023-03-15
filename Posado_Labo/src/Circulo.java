@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Circulo {
     private int radio;
     public Circulo(){
@@ -10,14 +12,12 @@ public class Circulo {
     public void setRadio(int radio) {
         this.radio = radio;
     }
-    public double areaCirculo(int radio){
-        double area=radio*radio* Math.PI;
-        return area;
+    public double areaCirculo(){
+        return Math.pow(radio,2)* Math.PI;
     }
 
-    public double perimetroCirculo(int radio){
-        double perimetro=radio* Math.PI *2;
-        return perimetro;
+    public double perimetroCirculo(){
+        return radio* Math.PI *2;
     }
 
     public static void main(String[] args) {
