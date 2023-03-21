@@ -9,6 +9,12 @@ public class Coche {
         this.color="n/a";
         this.velocidad=0;
     }
+    public Coche(String marca, String modelo, String color, int velocidad){
+        this.marca=marca;
+        this.modelo=modelo;
+        this.color=color;
+        this.velocidad=velocidad;
+    }
     public String getColor() {
         return color;
     }

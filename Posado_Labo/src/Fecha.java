@@ -1,3 +1,7 @@
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Fecha {
     private int dia;
     private int mes;
@@ -7,7 +11,11 @@ public class Fecha {
         this.mes=1;
         this.año=1900;
     }
-
+    public Fecha(int dia, int mes, int año){
+        this.dia=dia;
+        this.mes=mes;
+        this.año=año;
+    }
     public int getAño() {
         return año;
     }
@@ -31,20 +39,15 @@ public class Fecha {
         this.mes = mes;
     }
 
-    public Fecha(int dia, int mes, int año){
-        dia=31;
-        mes=8;
-        año=2005;
-    }
     public void valida(){
         if(dia>31 || dia<1){
-
+            dia=1;
         }
         if(mes>12 || mes<1){
-
+            mes=1;
         }
-        if(año<0){
-
+        if(año<1000 || año>9999){
+            año=1900;
         }
 
     }
@@ -79,9 +82,14 @@ public class Fecha {
         System.out.println(dia+"-"+mes+"-"+año);
     }
     public void larga(){
-        String diA;
         String meS;
-        String añO;
+        String diA;
+        Calendar c = Calendar.getInstance();
+        Calendar date= Calendar.getInstance();
+        date.set(año, mes-1, dia);
+        Date date1= date.getTime();
+        c.setTime(date1);
+        int dayOfWeek = date.get(Calendar.DAY_OF_WEEK);
         switch (mes) {
             case 1:
                 meS="enero";
@@ -123,15 +131,105 @@ public class Fecha {
                 meS="ninguno";
                 break;
         }
+        switch (dayOfWeek){
+            case 1:
+                diA="Domingo";
+                break;
+            case 2:
+                diA="Lunes";
+                break;
+            case 3:
+                diA="Martes";
+                break;
+            case 4:
+                diA="Miercoles";
+                break;
+            case 5:
+                diA="Jueves";
+                break;
+            case 6:
+                diA="Viernes";
+                break;
+            case 7:
+                diA="Sabado";
+                break;
+            default:
+                diA="N/A";
+                break;
+        }
+        System.out.println(diA+ " "+dia +" de "+meS+" del "+ año);
     }
     public void siguiente(){
-        dia = dia + 1;
+        if(mes == 1 || mes == 3 || mes == 5 ||mes == 7 || mes == 8 || mes == 10 && dia ==31) {
+            dia = 1;
+            mes = mes+1;
+        }else if(mes == 12 && dia ==31){
+            mes=1;
+            dia=1;
+        }else if(mes == 4 || mes == 6 || mes == 9 || mes == 11 && dia ==30){
+            mes= mes +1;
+            dia=1;
+        } else if (dia==28) {
+            dia=1;
+            mes= mes+1;
+        }else{
+            dia=dia++;
+        }
     }
     public void anterior(){
-        dia = dia - 1;
+        if(mes == 1 || mes==    2 || mes == 5 ||mes == 7 || mes == 10 || mes == 12 && dia ==1) {
+            dia = 1;
+            mes = mes+1;
+        }else if(mes == 4 || mes == 6 || mes == 9 || mes == 11 && dia ==1){
+            mes= mes -1;
+            dia=31;
+        } else if ( mes == 3  && dia==1) {
+            mes= mes-1;
+            dia=28;
+        }else {
+            dia=dia-1;
+        }
     }
 
     public void igualQue(Fecha fecha1){
-
+        if(fecha1.dia == dia && fecha1.mes == mes && fecha1.año == año){
+            System.out.println("Las fechas son iguales");
+        }else{
+            System.out.println("Las fechas NO son iguales");
+        }
+    }
+    public void menorQue(Fecha fecha1){
+        if(fecha1.dia == dia && fecha1.mes == mes && fecha1.año == año) {
+            System.out.println("las fechas son iguales");
+        }else if(fecha1.año >= año){
+            if(fecha1.mes>=mes){
+                if(fecha1.dia>=dia){
+                    System.out.println("la fecha es menor");
+                }else{
+                    System.out.println("La fecha No es menor");
+                }
+            }else{
+                System.out.println("La fecha No es menor");
+            }
+        }else{
+            System.out.println("La fecha No es menor");
+        }
+    }
+    public void mayorQue(Fecha fecha1){
+        if(fecha1.dia == dia && fecha1.mes == mes && fecha1.año == año) {
+            System.out.println("las fechas son iguales");
+        }else if(fecha1.año <= año){
+            if(fecha1.mes<=mes){
+                if(fecha1.dia<=dia){
+                    System.out.println("la fecha es mayor");
+                }else{
+                    System.out.println("La fecha No es mayor");
+                }
+            }else{
+                System.out.println("La fecha No es mayor");
+            }
+        }else{
+            System.out.println("La fecha No es mayor");
+        }
     }
 }

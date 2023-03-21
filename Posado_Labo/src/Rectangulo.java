@@ -5,6 +5,10 @@ public class Rectangulo {
         this.base = 0;
         this.altura = 0;
     }
+    public Rectangulo(int base,int altura){
+        this.base=base;
+        this.altura=altura;
+    }
     public int getBase(){
         return base;
     }
