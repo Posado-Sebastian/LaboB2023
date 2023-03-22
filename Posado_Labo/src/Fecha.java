@@ -81,7 +81,7 @@ public class Fecha {
     public void corto(){
         System.out.println(dia+"-"+mes+"-"+año);
     }
-    public void larga(){
+    public String larga(){
         String meS;
         String diA;
         Calendar c = Calendar.getInstance();
@@ -157,7 +157,8 @@ public class Fecha {
                 diA="N/A";
                 break;
         }
-        System.out.println(diA+ " "+dia +" de "+meS+" del "+ año);
+        String fechaLarga=diA+ " "+dia +" de "+meS+" del "+ año;
+        return fechaLarga;
     }
     public void siguiente(){
         if(mes == 1 || mes == 3 || mes == 5 ||mes == 7 || mes == 8 || mes == 10 && dia ==31) {
@@ -198,23 +199,23 @@ public class Fecha {
             System.out.println("Las fechas NO son iguales");
         }
     }
-    public void menorQue(Fecha fecha1){
+    public int menorQue(Fecha fecha1){
         if(fecha1.dia == dia && fecha1.mes == mes && fecha1.año == año) {
-            System.out.println("las fechas son iguales");
+            return 3;
         }else if(fecha1.año >= año){
             if(fecha1.mes>=mes){
                 if(fecha1.dia>=dia){
-                    System.out.println("la fecha es menor");
+                    return 1;
                 }else{
-                    System.out.println("La fecha No es menor");
+                    return 2;
                 }
             }else{
-                System.out.println("La fecha No es menor");
+                return 2;
             }
         }else{
-            System.out.println("La fecha No es menor");
+            return 2;
         }
-    }
+    }//uso numeros en vez de un boolean porque hay una tercera opcion que es si las fechas son iguales
     public void mayorQue(Fecha fecha1){
         if(fecha1.dia == dia && fecha1.mes == mes && fecha1.año == año) {
             System.out.println("las fechas son iguales");

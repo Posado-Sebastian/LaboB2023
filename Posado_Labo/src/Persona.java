@@ -37,7 +37,8 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public void mostrarDatos(){
-        System.out.println("Edad: "+edad+" direccion: "+direccion+" nombre: "+nombre);
+    public String mostrarDatos(){
+        String datos="Edad: "+edad+" direccion: "+direccion+" nombre: "+nombre;
+        return datos;
     }
 }

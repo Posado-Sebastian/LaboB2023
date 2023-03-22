@@ -21,10 +21,13 @@ public class Libros {
         this.editorial=editorial;
         this.fechaPublicacion=fechaPublicacion;
     }
-    public Libros(String titulo, String editorial, Fecha fechaPublicacion){
-        this.titulo=titulo;
-        this.editorial=editorial;
-        this.fechaPublicacion=fechaPublicacion;
+    public Libros(String titulo, String editorial, Fecha fechaPublicacion, Persona autor, int ISBN, int cantidadPaginas){
+        this.titulo="JOSEJOSE";
+        this.editorial="santillana";
+        this.autor=new Persona(32,4550,"jose");
+        this.ISBN=123;
+        this.cantidadPaginas=13;
+        this.fechaPublicacion=new Fecha(31,8,2005);
     }
     public Libros(Persona autor, int ISBN, int cantidadPaginas, Fecha fechaPublicacion){
         this.autor=autor;
@@ -81,6 +84,22 @@ public class Libros {
         this.titulo = titulo;
     }
     public void mostrarInformacion(){
-        System.out.println("Titulo: "+titulo+ "\r\n"+"Autor: "+ autor+ "\r\n"+"ISBN: "+ISBN+ "\r\n"+"Cantidad de paginas: "+ cantidadPaginas+ "\r\n"+"Editorial: "+editorial+ "\r\n"+"Fecha: "+ fechaPublicacion);
+
+        System.out.println("Titulo: "+titulo+ "\r\n"+"Autor: "+ autor.mostrarDatos()+ "\r\n"+"ISBN: "+ISBN+ "\r\n"+"Cantidad de paginas: "+ cantidadPaginas+ "\r\n"+"Editorial: "+editorial+ "\r\n"+"Fecha: "+ fechaPublicacion.larga());
+    }
+    public void libroAnterior(Fecha fechaPublicacion1){
+        int i;
+        i = this.fechaPublicacion.menorQue(fechaPublicacion1);
+        switch (i){
+            case 3:
+                System.out.println("Los dos libros salieron el mismo dia");
+                break;
+            case 2:
+                System.out.println("El libro no es anterior al dado");
+                break;
+            default:
+                System.out.println("El libro dado es anterior al dado");
+                break;
+        }
     }
 }
