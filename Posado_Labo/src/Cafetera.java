@@ -1,15 +1,15 @@
-public class Cafeteria {
+public class Cafetera {
     private int cantidadMaxima;
     private int cantidadActual;
-    public Cafeteria(){
+    public Cafetera(){
         this.cantidadMaxima=1000;
         this.cantidadActual = 0;
     }
-    public Cafeteria(int cantidadMaxima){
+    public Cafetera(int cantidadMaxima){
         this.cantidadMaxima=cantidadMaxima;
         this.cantidadActual=cantidadMaxima;
     }
-    public Cafeteria(int cantidadMaxima, int cantidadActual){
+    public Cafetera(int cantidadMaxima, int cantidadActual){
         this.cantidadMaxima=cantidadMaxima;
         this.cantidadActual=cantidadActual;
         if(cantidadActual>cantidadMaxima){

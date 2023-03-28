@@ -30,10 +30,10 @@ public class Libros {
         this.fechaPublicacion=new Fecha(31,8,2005);
     }
     public Libros(Persona autor, int ISBN, int cantidadPaginas, Fecha fechaPublicacion){
-        this.autor=autor;
-        this.ISBN=ISBN;
-        this.cantidadPaginas=cantidadPaginas;
-        this.fechaPublicacion=fechaPublicacion;
+        this.autor=new Persona(17, 3980, "Seib");
+        this.ISBN=455;
+        this.cantidadPaginas=696;
+        this.fechaPublicacion=new Fecha(28,8,2008);
     }
 
     public Fecha getFechaPublicacion() {
