@@ -1,11 +1,11 @@
-public class Libros {
+public class Libro {
     private String titulo;
     private Persona autor;
     private int ISBN;
     private int cantidadPaginas;
     private String editorial;
     private Fecha fechaPublicacion;
-    public Libros(){
+    public Libro(){
         this.titulo="n/a";
         this.autor=new Persona(0,0,"n/a");
         this.ISBN=0;
@@ -13,7 +13,7 @@ public class Libros {
         this.editorial="n/a";
         this.fechaPublicacion=new Fecha(1,1,1900);
     }
-    public Libros(String titulo, Persona autor, int ISBN, int cantidadPaginas, String editorial, Fecha fechaPublicacion){
+    public Libro(String titulo, Persona autor, int ISBN, int cantidadPaginas, String editorial, Fecha fechaPublicacion){
         this.titulo=titulo;
         this.autor=autor;
         this.ISBN=ISBN;
@@ -21,19 +21,21 @@ public class Libros {
         this.editorial=editorial;
         this.fechaPublicacion=fechaPublicacion;
     }
-    public Libros(String titulo, String editorial, Fecha fechaPublicacion, Persona autor, int ISBN, int cantidadPaginas){
-        this.titulo="JOSEJOSE";
+    public Libro(String titulo){
+        this.titulo=titulo;
         this.editorial="santillana";
         this.autor=new Persona(32,4550,"jose");
         this.ISBN=123;
         this.cantidadPaginas=13;
         this.fechaPublicacion=new Fecha(31,8,2005);
     }
-    public Libros(Persona autor, int ISBN, int cantidadPaginas, Fecha fechaPublicacion){
+    public Libro(String titulo, String editorial){
         this.autor=new Persona(17, 3980, "Seib");
         this.ISBN=455;
         this.cantidadPaginas=696;
         this.fechaPublicacion=new Fecha(28,8,2008);
+        this.titulo=titulo;
+        this.editorial=editorial;
     }
 
     public Fecha getFechaPublicacion() {
