@@ -55,7 +55,7 @@ public class Alumno {
         }
     }
     public void menorNota(){
-        int menor = 10;
+        int menor = notas.get(0);
         for(int nota:notas){
             if(nota<menor){
                 menor=nota;
@@ -63,7 +63,7 @@ public class Alumno {
         }
     }
     public void mayorNota(){
-        int mayor = 0;
+        int mayor = notas.get(0);
         for(int nota:notas){
             if(nota>mayor){
                 mayor=nota;
