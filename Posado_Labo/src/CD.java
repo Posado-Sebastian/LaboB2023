@@ -24,7 +24,7 @@ public class CD {
         System.out.println("Titulo: " + cancion.getTitulo()+"\n"+datosAutor);
     }
     public void grabaCancion(int posicion, Cancion nuevaCancion){
-        cancions.add(posicion, nuevaCancion);
+        cancions.set(posicion, nuevaCancion);
     }
     public void agregarCancion(Cancion cancion){
         cancions.add(cancion);
