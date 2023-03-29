@@ -4,18 +4,16 @@ public class Alumno {
     private String  nombre;
     private String apellido;
     private Fecha nacimiento;
-    private ArrayList<Integer> notas;
+    private ArrayList<Materia> materias;
     public void alumno(){
         this.nombre = "n/a";
         this.apellido = "n/a";
         this.nacimiento= new Fecha();
-        this.notas= new ArrayList<Integer>();
     }
-    public void alumno(String nombre, String apellido, Fecha nacimiento, ArrayList<Integer> notas){
+    public void alumno(String nombre, String apellido, Fecha nacimiento){
         this.nombre = nombre;
         this.apellido = apellido;
         this.nacimiento= nacimiento;
-        this.notas= notas;
     }
 
     public String getNombre() {
@@ -26,8 +24,12 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public ArrayList<Integer> getNotas() {
-        return notas;
+    public ArrayList<Materia> getMaterias() {
+        return materias;
+    }
+
+    public void setMaterias(ArrayList<Materia> materias) {
+        this.materias = materias;
     }
 
     public Fecha getNacimiento() {
@@ -46,28 +48,33 @@ public class Alumno {
         this.nacimiento = nacimiento;
     }
 
-    public void setNotas(ArrayList<Integer> notas) {
-        this.notas = notas;
-    }
-    public void agregarNota(int nota){
+    public void agregarNota(int nota, int materia){
         if(nota<11 && nota>0){
-            notas.add(nota);
+            Materia materiaSustituir=materias.get(materia);
+            materiaSustituir.getNotas().add(nota);
         }
     }
-    public void menorNota(){
+    public void menorNota(int materia){
         int menor = 10;
-        for(int nota:notas){
+        Materia materia2=materias.get(materia);
+        ArrayList<Integer>notas2=materia2.getNotas();
+        for(int nota:notas2){
             if(nota<menor){
                 menor=nota;
             }
         }
     }
-    public void mayorNota(){
+    public void mayorNota(int materia){
         int mayor = 1;
-        for(int nota:notas){
+        Materia materia2=materias.get(materia);
+        ArrayList<Integer>notas2=materia2.getNotas();
+        for(int nota:notas2){
             if(nota>mayor){
                 mayor=nota;
             }
         }
+    }
+    public void agregarMateria(String materia){
+        materias.add(new Materia(new ArrayList<Integer>(), materia));
     }
 }
