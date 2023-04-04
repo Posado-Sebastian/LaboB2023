@@ -5,15 +5,17 @@ public class Alumno {
     private String apellido;
     private Fecha nacimiento;
     private ArrayList<Materia> materias;
-    public void alumno(){
+    public Alumno(){
         this.nombre = "n/a";
         this.apellido = "n/a";
         this.nacimiento= new Fecha();
+        this.materias = new ArrayList<Materia>();
     }
-    public void alumno(String nombre, String apellido, Fecha nacimiento){
+    public Alumno(String nombre, String apellido, Fecha nacimiento, ArrayList<Materia> materias){
         this.nombre = nombre;
         this.apellido = apellido;
         this.nacimiento= nacimiento;
+        this.materias = materias;
     }
 
     public String getNombre() {
@@ -48,10 +50,19 @@ public class Alumno {
         this.nacimiento = nacimiento;
     }
 
+    public void mostrarDatos(){
+        System.out.println(nombre + apellido + nacimiento.larga());
+        if(materias.size()>0) {
+            for (int i = 0; i < materias.size(); i++) {
+                materias.get(i).mostrarMateria();
+            }
+        }
+    }
     public void agregarNota(int nota, int materia){
         if(nota<11 && nota>0){
-            Materia materiaSustituir=materias.get(materia);
-            materiaSustituir.getNotas().add(nota);
+            //Materia materiaSustituir=materias.get(materia);
+            //materiaSustituir.getNotas().add(nota);
+            materias.get(materia).getNotas().add(nota);
         }
     }
     public void menorNota(int materia){
@@ -74,7 +85,14 @@ public class Alumno {
             }
         }
     }
-    public void agregarMateria(String materia){
+    public void agregarMateria(String materia) {
         materias.add(new Materia(new ArrayList<Integer>(), materia));
+    }
+    public void promedioAlumno(){
+        int promedio=0;
+        for (int i=0; i<materias.size(); i++){
+            promedio=promedio+materias.get(i).promedioMateria();
+        }
+        System.out.println("El promedio del alumno es " + promedio);
     }
 }
