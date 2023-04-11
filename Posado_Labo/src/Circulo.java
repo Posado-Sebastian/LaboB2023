@@ -1,23 +1,29 @@
 import java.util.Date;
 
-public class Circulo {
-    private int radio;
+public class Circulo extends FiguraGeometrica{
+
     public Circulo(){
-        this.radio=2;
-    }
-    public int getRadio(){
-        return radio;
+        super();
     }
 
+    @Override
     public void setRadio(int radio) {
-        this.radio = radio;
-    }
-    public double areaCirculo(){
-        return Math.pow(radio,2)* Math.PI;
+        super.setRadio(radio);
     }
 
-    public double perimetroCirculo(){
-        return radio* Math.PI *2;
+    @Override
+    public int getRadio() {
+        return super.getRadio();
+    }
+
+    @Override
+    public double areaCirculo() {
+        return super.areaCirculo();
+    }
+
+    @Override
+    public double perimetroCirculo() {
+        return super.perimetroCirculo();
     }
 
     public static void main(String[] args) {

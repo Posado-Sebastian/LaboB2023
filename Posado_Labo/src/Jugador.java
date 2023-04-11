@@ -1,27 +1,27 @@
-public class Jugador {
-    private String nombre;
+public class Jugador extends Persona{
     private int numeroCamiseta;
     private Fecha fechaJugador;
 
     public Jugador(){
-        this.nombre="n/a";
         this.numeroCamiseta=-1;
         this.fechaJugador=new Fecha();
 
     }
     public Jugador(String nombre, int numeroCamiseta, Fecha fechaJugador){
-        this.nombre=nombre;
+        super(nombre);
         this.numeroCamiseta=numeroCamiseta;
         this.fechaJugador=fechaJugador;
 
     }
 
+    @Override
     public String getNombre() {
-        return nombre;
+        return super.getNombre();
     }
 
+    @Override
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        super.setNombre(nombre);
     }
 
     public Fecha getFechaJugador() {
@@ -40,6 +40,6 @@ public class Jugador {
         this.numeroCamiseta = numeroCamiseta;
     }
     public void mostrarJugador(){
-        System.out.println("Nombre: " + nombre + "\n" + "Numero de camiseta: " + numeroCamiseta + "\n" + "Fecha de nacimiento: " + fechaJugador.larga());
+        System.out.println("Nombre: " + getNombre() + "\n" + "Numero de camiseta: " + numeroCamiseta + "\n" + "Fecha de nacimiento: " + fechaJugador.larga());
     }
 }

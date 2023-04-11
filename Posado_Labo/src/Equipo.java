@@ -6,7 +6,7 @@ public class Equipo {
     private String nombreEquipo;
     private String barrio;
     private String horario;
-    private String dia;
+    private ArrayList<Boolean> dia;
     private int capitan;
 
     public Equipo(){
@@ -14,10 +14,10 @@ public class Equipo {
         this.nombreEquipo="n/a";
         this.barrio="n/a";
         this.horario="noAsignado";
-        this.dia="noAsignado";
+        this.dia=new ArrayList<Boolean>();
         this.capitan=-1;
     }
-    public Equipo(ArrayList<Jugador> jugadores, String nombreEquipo, String barrio, String horario, String dia, int capitan){
+    public Equipo(ArrayList<Jugador> jugadores, String nombreEquipo, String barrio, String horario, ArrayList<Boolean> dia, int capitan){
         this.jugadores=jugadores;
         this.nombreEquipo=nombreEquipo;
         this.barrio=barrio;
@@ -34,11 +34,11 @@ public class Equipo {
         this.capitan = capitan;
     }
 
-    public void setDia(String dia) {
+    public void setDia(ArrayList<Boolean> dia) {
         this.dia = dia;
     }
 
-    public String getDia() {
+    public ArrayList<Boolean> getDia() {
         return dia;
     }
 
@@ -84,11 +84,6 @@ public class Equipo {
         }
         if (jugadores.size() < 11 && verificacion == true) {
             jugadores.add(jugador);
-            System.out.println("jugador capitan si o no?");
-            String sino = entrada.nextLine();
-            if (sino.toLowerCase()=="si"){
-                capitan==jugador.getNumeroCamiseta();
-            }
         }
     }
     public void mostrarEquipo() {

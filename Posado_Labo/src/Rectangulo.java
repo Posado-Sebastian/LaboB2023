@@ -1,34 +1,38 @@
-public class Rectangulo {
-    private int base;
-    private int altura;
+public class Rectangulo extends FiguraGeometrica{
     public Rectangulo(){
-        this.base = 0;
-        this.altura = 0;
+        super();
     }
     public Rectangulo(int base,int altura){
-        this.base=base;
-        this.altura=altura;
-    }
-    public int getBase(){
-        return base;
-    }
-    public int getAltura(){
-        return altura;
+        super(base, altura);
     }
 
+    @Override
     public void setAltura(int altura) {
-        this.altura = altura;
+        super.setAltura(altura);
     }
 
+    @Override
     public void setBase(int base) {
-        this.base = base;
+        super.setBase(base);
     }
-    public int areaRectangulo(int base, int altura){
-        int area = base*altura;
-        return area;
+
+    @Override
+    public int getAltura() {
+        return super.getAltura();
     }
-    public int perimetroRectangulo(int base, int altura){
-        int perimetro = altura*2 + base*2;
-        return perimetro;
+
+    @Override
+    public int getBase() {
+        return super.getBase();
+    }
+
+    @Override
+    public void areaRectangulo() {
+        super.areaRectangulo();
+    }
+
+    @Override
+    public void perimetroRectangulo() {
+        super.perimetroRectangulo();
     }
 }

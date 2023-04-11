@@ -1,30 +1,42 @@
 import java.util.ArrayList;
 
-public class Alumno {
-    private String  nombre;
+public class Alumno extends Persona{
     private String apellido;
     private Fecha nacimiento;
     private ArrayList<Materia> materias;
+    private String division;
     public Alumno(){
-        this.nombre = "n/a";
         this.apellido = "n/a";
         this.nacimiento= new Fecha();
         this.materias = new ArrayList<Materia>();
+        this.division="";
     }
-    public Alumno(String nombre, String apellido, Fecha nacimiento, ArrayList<Materia> materias){
-        this.nombre = nombre;
+    public Alumno(String nombre, String apellido, Fecha nacimiento, ArrayList<Materia> materias, String division){
+        super(nombre);
         this.apellido = apellido;
         this.nacimiento= nacimiento;
         this.materias = materias;
+        this.division=division;
     }
 
+    public void setDivision(String division) {
+        this.division = division;
+    }
+
+    public String getDivision() {
+        return division;
+    }
+
+    @Override
     public String getNombre() {
-        return nombre;
+        return super.getNombre();
     }
 
+    @Override
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        super.setNombre(nombre);
     }
+
 
     public ArrayList<Materia> getMaterias() {
         return materias;
@@ -50,13 +62,14 @@ public class Alumno {
         this.nacimiento = nacimiento;
     }
 
-    public void mostrarDatos(){
-        System.out.println(nombre + apellido + nacimiento.larga());
+    public String mostrarDatos(){
+        System.out.println(getNombre()+ apellido + nacimiento.larga());
         if(materias.size()>0) {
             for (int i = 0; i < materias.size(); i++) {
                 materias.get(i).mostrarMateria();
             }
         }
+        return null;
     }
     public void agregarNota(int nota, int materia){
         if(nota<11 && nota>0){

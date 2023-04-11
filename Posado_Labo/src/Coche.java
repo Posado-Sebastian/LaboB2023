@@ -3,17 +3,39 @@ public class Coche {
     private String modelo;
     private String color;
     private int velocidad;
+    private int cantidadRuedas;
+    private Fecha anioProduccion;
     public Coche(){
         this.marca="n/a";
         this.modelo="n/a";
         this.color="n/a";
         this.velocidad=0;
+        this.cantidadRuedas=4;
+        this.anioProduccion=new Fecha();
     }
-    public Coche(String marca, String modelo, String color, int velocidad){
+    public Coche(String marca, String modelo, String color, int velocidad, int cantidadRuedas, Fecha anioProduccion){
         this.marca=marca;
         this.modelo=modelo;
         this.color=color;
         this.velocidad=velocidad;
+        this.cantidadRuedas=cantidadRuedas;
+        this.anioProduccion=anioProduccion;
+    }
+
+    public void setAnioProduccion(Fecha anioProduccion) {
+        this.anioProduccion = anioProduccion;
+    }
+
+    public Fecha getAnioProduccion() {
+        return anioProduccion;
+    }
+
+    public void setCantidadRuedas(int cantidadRuedas) {
+        this.cantidadRuedas = cantidadRuedas;
+    }
+
+    public int getCantidadRuedas() {
+        return cantidadRuedas;
     }
     public String getColor() {
         return color;
