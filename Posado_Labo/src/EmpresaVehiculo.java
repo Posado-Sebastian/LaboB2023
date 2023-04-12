@@ -57,4 +57,21 @@ public class EmpresaVehiculo {
             }
         }
     }
+    public void mayorCantidadVehiculos(){
+        int contadorCamionetas=0;
+        int contadorAutos=0;
+        for(int i=0; i<vehiculos.size(); i++){
+            if(vehiculos.get(i) instanceof Auto){
+                contadorAutos++;
+            }else{
+                contadorCamionetas++;
+            }
+        }
+        if(contadorAutos>contadorCamionetas){
+            System.out.println("hay mas autos q camionetas");
+        }else{
+            System.out.println("hay mas camionetas que autos");
+            System.out.println("hay mas camionetas que autos");
+        }
+    }
 }
