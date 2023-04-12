@@ -1,11 +1,11 @@
-public class Coche {
+public class Vehiculo {
     private String marca;
     private String modelo;
     private String color;
     private int velocidad;
     private int cantidadRuedas;
     private Fecha anioProduccion;
-    public Coche(){
+    public Vehiculo(){
         this.marca="n/a";
         this.modelo="n/a";
         this.color="n/a";
@@ -13,7 +13,7 @@ public class Coche {
         this.cantidadRuedas=4;
         this.anioProduccion=new Fecha();
     }
-    public Coche(String marca, String modelo, String color, int velocidad, int cantidadRuedas, Fecha anioProduccion){
+    public Vehiculo(String marca, String modelo, String color, int velocidad, int cantidadRuedas, Fecha anioProduccion){
         this.marca=marca;
         this.modelo=modelo;
         this.color=color;

@@ -1,4 +1,4 @@
-public class Auto extends Coche{
+public class Auto extends Vehiculo {
     private Boolean descapotado;
     private String patente;
     public Auto(){

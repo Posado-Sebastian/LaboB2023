@@ -1,4 +1,4 @@
-public class Bicicleta extends Coche{
+public class Bicicleta extends Vehiculo {
     public Bicicleta(){
         super();
     }

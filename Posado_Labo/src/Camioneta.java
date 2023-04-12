@@ -1,4 +1,4 @@
-public class Camioneta extends Coche{
+public class Camioneta extends Vehiculo {
     private String patente;
     private int cargaMaxima;
     private int carga;
