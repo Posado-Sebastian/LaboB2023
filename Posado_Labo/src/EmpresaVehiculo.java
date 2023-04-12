@@ -71,7 +71,6 @@ public class EmpresaVehiculo {
             System.out.println("hay mas autos q camionetas");
         }else{
             System.out.println("hay mas camionetas que autos");
-            System.out.println("hay mas camionetas que autos");
         }
     }
 }
