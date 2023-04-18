@@ -4,8 +4,8 @@ public class Profesor extends Persona {
         super();
         this.porcentajeDescuento=0;
     }
-    public Profesor (int edad, int direccion, String nombre, int porcentajeDescuento){
-        super(edad, direccion, nombre);
+    public Profesor (int edad, int direccion, String nombre, String apellido, int porcentajeDescuento){
+        super(edad, direccion, nombre, apellido);
         this.porcentajeDescuento=porcentajeDescuento;
     }
 

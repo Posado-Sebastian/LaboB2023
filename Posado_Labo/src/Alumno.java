@@ -1,19 +1,17 @@
 import java.util.ArrayList;
 
 public class Alumno extends Persona{
-    private String apellido;
     private Fecha nacimiento;
     private ArrayList<Materia> materias;
     private String division;
     public Alumno(){
-        this.apellido = "n/a";
+        super();
         this.nacimiento= new Fecha();
         this.materias = new ArrayList<Materia>();
         this.division="";
     }
-    public Alumno(String nombre, String apellido, Fecha nacimiento, ArrayList<Materia> materias, String division){
-        super(nombre);
-        this.apellido = apellido;
+    public Alumno(String nombre, String apellido, int edad, int direccion, Fecha nacimiento, ArrayList<Materia> materias, String division){
+        super(edad, direccion, nombre, apellido);
         this.nacimiento= nacimiento;
         this.materias = materias;
         this.division=division;
@@ -50,20 +48,14 @@ public class Alumno extends Persona{
         return nacimiento;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
 
     public void setNacimiento(Fecha nacimiento) {
         this.nacimiento = nacimiento;
     }
 
     public String mostrarDatos(){
-        System.out.println(getNombre()+ apellido + nacimiento.larga());
+        System.out.println(getNombre() + nacimiento.larga());
         if(materias.size()>0) {
             for (int i = 0; i < materias.size(); i++) {
                 materias.get(i).mostrarMateria();
