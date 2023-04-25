@@ -4,9 +4,8 @@ public class Pantalla extends Periferico{
         super();
         this.puertoValido="";
     }
-    public Pantalla(String marca, double precio, String nombre, Boolean entradaSalida, String puertoValido){
-        super(marca, precio, nombre, entradaSalida);
-        this.puertoValido=puertoValido;
+    public Pantalla(String marca, double precio, String nombre, int stock, Boolean entradaSalida, String puertoValido){
+        super(marca, precio, nombre, stock,  entradaSalida, puertoValido);
     }
 
     public String getPuertoValido() {

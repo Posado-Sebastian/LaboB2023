@@ -6,10 +6,9 @@ public class Mouse extends Periferico{
         this.tipoConector="";
         this.puertoValido="";
     }
-    public Mouse(String marca, double precio, String nombre, Boolean entradaSalida, String tipoConector, String puertoValido){
-        super(marca, precio, nombre, entradaSalida);
+    public Mouse(String marca, double precio, String nombre, int stock, Boolean entradaSalida, String tipoConector, String puertoValido){
+        super(marca, precio, nombre, stock, entradaSalida, puertoValido);
         this.tipoConector=tipoConector;
-        this.puertoValido=puertoValido;
     }
 
     public String getTipoConector() {

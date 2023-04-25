@@ -7,8 +7,8 @@ public class Cpu extends Componente{
         this.socket="";
         this.cantidadPines=0;
     }
-    public Cpu(String marca, double precio, String nombre, String socket, int cantidadPines){
-        super(marca, precio, nombre);
+    public Cpu(String marca, double precio, String nombre, int stock, String socket, int cantidadPines){
+        super(marca, precio, nombre, stock);
         this.socket=socket;
         this.cantidadPines=cantidadPines;
     }
