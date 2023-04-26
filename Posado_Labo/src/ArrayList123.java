@@ -32,7 +32,7 @@ public class ArrayList123 {
             n2 = Integer.parseInt(entradaN.nextLine());
             System.out.println("Ingrese el nombre");
             palabra = entradaS.nextLine();
-            personas.add(new Persona(n, n2, palabra));
+            personas.add(new Persona(n, n2, palabra, "apellido"));
         }
         for (Integer numero : numeros) {
             suma=suma+numero;

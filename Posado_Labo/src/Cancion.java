@@ -4,12 +4,12 @@ public class Cancion {
     private String genero;
     public Cancion(){
         this.titulo=" ";
-        this.autor=new Persona(0, 0, " ");
+        this.autor=new Persona();
         this.genero="n/a";
     }
     public Cancion(String titulo, Persona autor){
         this.titulo="asdasdads";
-        this.autor=new Persona(17, 4550, "posado");
+        this.autor=new Persona();
         this.genero="MEITALACERO";
     }
 

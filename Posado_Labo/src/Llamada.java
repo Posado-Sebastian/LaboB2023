@@ -51,6 +51,6 @@ public class Llamada {
         this.duracion = duracion;
     }
     public void mostrarDatos(){
-        System.out.println("Destino: " + destino + " Fecha: " + fecha.getDay() + fecha.getMonth() + " Duracion: " + duracion);
+        System.out.println("Destino: " + destino.getApellido() + " | Fecha: " + fecha.getDay() + fecha.getMonth() + " | Duracion: " + duracion);
     }
 }
