@@ -3,15 +3,15 @@ import java.util.ArrayList;
 public class Partido {
     private Equipo equipo1;
     private Equipo equipo2;
-    private String horarioPartido;
-    private ArrayList<Boolean> diaPartido;
+    private Horario horarioPartido;
+    private Dia diaPartido;
     public Partido(){
-        this.diaPartido=new ArrayList<Boolean>();
-        this.horarioPartido="noAsignado";
+        this.diaPartido=null;
+        this.horarioPartido=null;
         this.equipo1=new Equipo();
         this.equipo2=new Equipo();
     }
-    public Partido(ArrayList<Boolean> diaPartido, String horarioPartido, Equipo equipo1, Equipo equipo2){
+    public Partido(Dia diaPartido, Horario horarioPartido, Equipo equipo1, Equipo equipo2){
         this.diaPartido=diaPartido;
         this.horarioPartido=horarioPartido;
         this.equipo1=equipo1;
@@ -26,17 +26,15 @@ public class Partido {
         return equipo2;
     }
 
-    public ArrayList<Boolean> getDiaPartido() {
+    public Dia getDiaPartido() {
         return diaPartido;
     }
 
-    public String getHorarioPartido() {
+    public Horario getHorarioPartido() {
         return horarioPartido;
     }
 
-    public void setDiaPartido(ArrayList<Boolean> diaPartido) {
-        this.diaPartido = diaPartido;
-    }
+
 
     public void setEquipo1(Equipo equipo1) {
         this.equipo1 = equipo1;
@@ -46,13 +44,10 @@ public class Partido {
         this.equipo2 = equipo2;
     }
 
-    public void setHorarioPartido(String horarioPartido) {
-        this.horarioPartido = horarioPartido;
-    }
     public void mostrarPartido(){
         int dia=0;
         String diaString="";
-        for(int i=0; i<diaPartido.size(); i++){
+        for(int i=0; i<7; i++){
             if(equipo1.getDia().equals(equipo2.getDia())){
                 dia=i;
             }

@@ -28,4 +28,12 @@ public class ClientePC extends Persona{
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public String toString() {
+        return "ClientePC{" +
+                "nroTarjeta=" + nroTarjeta +
+                ", telefono=" + telefono +
+                '}';
+    }
 }

@@ -3,17 +3,17 @@ public class Libro {
     private Persona autor;
     private int ISBN;
     private int cantidadPaginas;
-    private String editorial;
+    private Editorial editorial;
     private Fecha fechaPublicacion;
     public Libro(){
         this.titulo="n/a";
-        this.autor=new Persona(0,0,"n/a");
+        this.autor=new Persona(0,0,"n/a", "");
         this.ISBN=0;
         this.cantidadPaginas=0;
-        this.editorial="n/a";
+        this.editorial=null;
         this.fechaPublicacion=new Fecha(1,1,1900);
     }
-    public Libro(String titulo, Persona autor, int ISBN, int cantidadPaginas, String editorial, Fecha fechaPublicacion){
+    public Libro(String titulo, Persona autor, int ISBN, int cantidadPaginas, Editorial editorial, Fecha fechaPublicacion){
         this.titulo=titulo;
         this.autor=autor;
         this.ISBN=ISBN;
@@ -23,14 +23,14 @@ public class Libro {
     }
     public Libro(String titulo){
         this.titulo=titulo;
-        this.editorial="santillana";
-        this.autor=new Persona(32,4550,"jose");
+        this.editorial=Editorial.ALIANZA;
+        this.autor=new Persona(32,4550,"jose", "");
         this.ISBN=123;
         this.cantidadPaginas=13;
         this.fechaPublicacion=new Fecha(31,8,2005);
     }
-    public Libro(String titulo, String editorial){
-        this.autor=new Persona(17, 3980, "Seib");
+    public Libro(String titulo, Editorial editorial){
+        this.autor=new Persona(17, 3980, "Seib", "");
         this.ISBN=455;
         this.cantidadPaginas=696;
         this.fechaPublicacion=new Fecha(28,8,2008);
@@ -54,7 +54,7 @@ public class Libro {
         return autor;
     }
 
-    public String getEditorial() {
+    public Editorial getEditorial() {
         return editorial;
     }
 
@@ -70,7 +70,7 @@ public class Libro {
         this.cantidadPaginas = cantidadPaginas;
     }
 
-    public void setEditorial(String editorial) {
+    public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
     }
 
