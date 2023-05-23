@@ -1,0 +1,212 @@
+1)
+9 operaciones elementales
+ultimo1: 4
+ultimo2: 5
+ultimo3: 4+4n
+
+2)
+  F1 = O(n)
+  F2 = O(1)
+  F3 = O(n)
+  F4 = O(1000) = O(1)
+  F5 = O(r+n)
+  
+3)
+  a_ Recorre el vector V y retorna la distancia mas grande de numero repetidos entre 2 numeros diferentes 
+  b_ 4+9n7n²
+  c_ Si, se puede, se hace de la siguiente manera:
+  	while(i<v.size){
+  	   if(j<v.size() and v[j]==v[i]){
+  	      j++;
+  	   }else{
+  	      meseta = j - 1; 
+ 	      i = j;
+ 	      if(maxMeseta < meseta){
+ 	         maxMeseta=meseta;
+ 	      }
+ 	   j = i + 1;
+ 	   }
+ 	}         
+ 	
+4)
+  602+700n=O(n)
+   
+5)
+  la cantidad de veces que se repite es 2 elevado a un numero(a que es la cantidad de veces que se repite) hasta llegar a n, y se pude bajar la potencia como logaritmo quedando log2(n)=a
+  O(log2(n))
+  
+6)
+  while(i<v.size()){
+     if(j<v.size and v[j]==v[i] and v[i]%2==0){
+        j++;
+     }else{
+        meseta = j - 1;
+        i = j;
+        if(maxMeseta<meseta){
+           masMeseta = meseta;
+        }
+        j= i + 1;
+     }
+  }
+  
+7)
+  vector<bool> func(){
+    vector<bool> vector1;
+    vector<bool> vector2;
+    vector<vector<bool>> matriz1={{false,true,false},{true,true,true},{false,true,false}};
+    int i = 0;
+    int j=i+1;
+    while(i<matriz1.size() && j<matriz1.size()){
+        if(matriz1[i] == matriz1[j]){
+            i++;
+            j= i+1;
+        }
+        j++;
+    }
+    return matriz1[i];                                                                                        
+}
+int main(){
+    vector<bool> vector=func();
+    for(int i=0;i<vector.size();i++){
+       if(vector[i]){
+        cout<<"True"<<endl;
+       } 
+       else{
+        cout<<"False"<<endl;
+       }
+    }
+}
+
+//peor tiempo 9+n*(12)
+
+9)
+  vector<int> func(vector<int> vect1, vector<int> vect2){
+    vector<int>aux;
+    int a=0;
+    int a2=0;
+    while(aux.size()<(vect1.size()+vect2.size())){
+        if(vect1[a]<vect2[a]){
+            aux.push_back(vect1[a]);
+            aux.push_back(vect2[a]);
+        }
+        else{    
+            aux.push_back(vect2[a]);
+            aux.push_back(vect1[a]);
+        }
+        a++;
+    }
+    a=0;
+    while(a<aux.size()-1){
+        if(aux[a]>aux[a+1]){
+            a2=aux[a];
+            aux[a]=aux[a+1];
+            aux[a+1]=a2;
+        }
+        a++;
+    }
+    return aux;
+}
+int main(){
+    vector<int> vec1={1,4,7,10};
+    vector<int> vec2={2,4,6,8};
+    vec1=func(vec1, vec2);
+    for(int i=0;i<vec1.size();i++){
+        cout<<vec1[i]<<endl;
+    }
+}
+
+10)
+vector<int> func(vector<int> vect1, vector<int> vect2, vector<int> vect3){
+    vector<int>aux;
+    int a=0;
+    int a2=0;
+    int a3=0;
+    while(aux.size()<(vect1.size()+vect2.size()+vect3.size())){
+
+        if(vect1[a]<vect2[a]<vect3[a]){
+            aux.push_back(vect1[a]);
+            aux.push_back(vect2[a]);
+            aux.push_back(vect3[a]);
+        }
+        else if(vect1[a]<vect3[a]<vect2[a]){
+            aux.push_back(vect1[a]);
+            aux.push_back(vect3[a]);
+            aux.push_back(vect2[a]);
+        }
+        else if(vect2[a]<vect1[a]<vect3[a]){
+            aux.push_back(vect2[a]);
+            aux.push_back(vect1[a]);
+            aux.push_back(vect3[a]);
+        }
+        else if(vect2[a]<vect3[a]<vect1[a]){
+            aux.push_back(vect2[a]);
+            aux.push_back(vect3[a]);
+            aux.push_back(vect1[a]);
+        }
+        else if(vect3[a]<vect1[a]<vect2[a]){
+            aux.push_back(vect3[a]);
+            aux.push_back(vect1[a]);
+            aux.push_back(vect2[a]);
+        }
+        else if(vect3[a]<vect2[a]<vect1[a]){
+            aux.push_back(vect3[a]);
+            aux.push_back(vect2[a]);
+            aux.push_back(vect1[a]);
+        }
+        a++;
+    }
+    a=0;
+    while(a<aux.size()-1){
+        if(aux[a]>aux[a+1]){
+            a2=aux[a];
+            aux[a]=aux[a+1];
+            aux[a+1]=a2;
+        }
+        a++;
+    }
+    a=0;
+    while(a<aux.size()){
+        if(aux[a]<aux[a-1]){
+            a2=aux[a];
+            aux[a]=aux[a-1];
+            aux[a-1]=a2;
+        }
+        a++;
+    }
+    return aux;
+}
+int main(){
+    vector<int> vec1={1,4,7,10};
+    vector<int> vec2={2,4,6,8};
+    vector<int> vec3={3,5,9,11};
+    vec1=func(vec1, vec2, vec3);
+    for(int i=0;i<vec1.size();i++){
+        cout<<vec1[i]<<endl;
+    }
+}
+
+11)
+vector<int> func(vector<int> vect){
+    vector<int> aux;
+    int a1=0;
+    int a2=1;
+    while(a2<=3){
+        if(a1==vect.size()){
+            a1=0;
+            a2++;
+        }
+        if(vect[a1]==a2){
+            aux.push_back(a2);
+        }
+        a1++;
+    }
+    return aux;
+}
+int main(){
+    vector<int> vect={1, 2, 1, 1, 3, 3};
+    vect=func(vect);
+    for(int i=0;i<vect.size();i++){
+        cout<<vect[i]<<endl;
+    }
+}
+  
