@@ -1,5 +1,7 @@
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Empleado {
     private String nombre;
@@ -7,6 +9,7 @@ public class Empleado {
     private int telefono;
     private Date nacimiento;
     private ArrayList<Boolean> diasLaborales;
+    private HashMap<Date, Boolean> asistencia;
     public String getApellido() {
         return apellido;
     }
@@ -51,12 +54,13 @@ public class Empleado {
         return nombre;
     }
 
-    public Empleado(String nombre, String apellido, int telefono, Date nacimiento, ArrayList<Boolean> diasLaborales) {
+    public Empleado(String nombre, String apellido, int telefono, Date nacimiento, ArrayList<Boolean> diasLaborales, HashMap<Date, Boolean> asistencia) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.nacimiento = nacimiento;
         this.diasLaborales = diasLaborales;
+        this.asistencia=asistencia;
     }
     public Empleado(){
         this.nombre="";
@@ -64,10 +68,29 @@ public class Empleado {
         this.telefono = 0;
         this.nacimiento = new Date();
         this.diasLaborales = new ArrayList<Boolean>();
+        this.asistencia= new HashMap<Date,Boolean>();
     }
 
     @Override
     public String toString() {
         return getClass().getCanonicalName() + " -> " + nombre;
+    }
+
+    public float porcentajeAsis(int mes){
+        int presente = 0;
+        float cantidad = 0;
+        if(!asistencia.isEmpty()) {
+            for (Date fecha : asistencia.keySet()) {
+                if (fecha.getMonth() == mes) {
+                    cantidad = cantidad + 1;
+                    if (asistencia.get(fecha).equals(true)) {
+                        presente++;
+                    }
+                }
+            }
+            cantidad = presente / (cantidad * 100);
+            return cantidad;
+        }
+        return cantidad;
     }
 }
