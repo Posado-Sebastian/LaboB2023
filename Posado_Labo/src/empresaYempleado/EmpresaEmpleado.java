@@ -1,3 +1,5 @@
+package empresaYempleado;
+
 import java.util.HashSet;
 
 public class EmpresaEmpleado {

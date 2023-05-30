@@ -1,3 +1,5 @@
+package cosasPersona;
+
 import java.util.Date;
 import java.util.HashMap;
 
@@ -93,5 +95,13 @@ public class Personaa {
             }
             System.out.println("Del año " + elOtroAnio + " al año " + anio + " cambio su peso en " + (control.get(anio2).getPeso() + control.get(anio1).getPeso())/2 + " y su cambio en altura fue " + (control.get(anio2).getAltura() + control.get(anio1).getAltura())/2);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Personaa{" +
+                "apellido='" + apellido + '\'' +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }

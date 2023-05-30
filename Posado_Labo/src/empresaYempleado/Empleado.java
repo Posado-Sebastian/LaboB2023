@@ -1,4 +1,5 @@
-import java.sql.Time;
+package empresaYempleado;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -8,7 +9,8 @@ public class Empleado {
     private String apellido;
     private int telefono;
     private Date nacimiento;
-    private ArrayList<Boolean> diasLaborales;
+    private String pais;
+    private ArrayList<Dia> diasLaborales;
     private HashMap<Date, Boolean> asistencia;
     public String getApellido() {
         return apellido;
@@ -34,11 +36,11 @@ public class Empleado {
         this.nacimiento = nacimiento;
     }
 
-    public ArrayList<Boolean> getDiasLaborales() {
+    public ArrayList<Dia> getDiasLaborales() {
         return diasLaborales;
     }
 
-    public void setDiasLaborales(ArrayList<Boolean> diasLaborales) {
+    public void setDiasLaborales(ArrayList<Dia> diasLaborales) {
         this.diasLaborales = diasLaborales;
     }
 
@@ -54,7 +56,23 @@ public class Empleado {
         return nombre;
     }
 
-    public Empleado(String nombre, String apellido, int telefono, Date nacimiento, ArrayList<Boolean> diasLaborales, HashMap<Date, Boolean> asistencia) {
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public HashMap<Date, Boolean> getAsistencia() {
+        return asistencia;
+    }
+
+    public void setAsistencia(HashMap<Date, Boolean> asistencia) {
+        this.asistencia = asistencia;
+    }
+
+    public Empleado(String nombre, String apellido, int telefono, Date nacimiento, ArrayList<Dia> diasLaborales, HashMap<Date, Boolean> asistencia) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -67,7 +85,7 @@ public class Empleado {
         this.apellido = "";
         this.telefono = 0;
         this.nacimiento = new Date();
-        this.diasLaborales = new ArrayList<Boolean>();
+        this.diasLaborales = new ArrayList<Dia>();
         this.asistencia= new HashMap<Date,Boolean>();
     }
 

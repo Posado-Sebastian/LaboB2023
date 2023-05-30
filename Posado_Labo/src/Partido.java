@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import empresaYempleado.Dia;
 
 public class Partido {
     private Equipo equipo1;

@@ -1,3 +1,5 @@
+package cosasPersona;
+
 public class Registro {
     private double peso;
     private double altura;
