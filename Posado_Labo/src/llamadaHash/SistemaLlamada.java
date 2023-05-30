@@ -30,8 +30,10 @@ public class SistemaLlamada {
     public int timeLlamadaExterior(Empleado empleado){
         int tiempo=0;
         for (Llamada llamada: llamadas.keySet()){
-            if(empleado.equals(llamada.getOrigen()) && llamada.getOrigen().getPais() != llamada.getDestino().getPais() ){
-                tiempo+= llamada.getDuracion();
+            if(llamadas.get(llamada)==empleado) {
+                if (empleado.equals(llamada.getOrigen()) && llamada.getOrigen().getPais() != llamada.getDestino().getPais()) {
+                    tiempo += llamada.getDuracion();
+                }
             }
         }
         return tiempo;

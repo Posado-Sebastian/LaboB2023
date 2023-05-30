@@ -3,6 +3,7 @@ package empresaYempleado;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Empleado {
     private String nombre;
@@ -10,7 +11,7 @@ public class Empleado {
     private int telefono;
     private Date nacimiento;
     private String pais;
-    private ArrayList<Dia> diasLaborales;
+    private HashSet<Dia> diasLaborales;
     private HashMap<Date, Boolean> asistencia;
     public String getApellido() {
         return apellido;
@@ -36,11 +37,11 @@ public class Empleado {
         this.nacimiento = nacimiento;
     }
 
-    public ArrayList<Dia> getDiasLaborales() {
+    public HashSet<Dia> getDiasLaborales() {
         return diasLaborales;
     }
 
-    public void setDiasLaborales(ArrayList<Dia> diasLaborales) {
+    public void setDiasLaborales(HashSet<Dia> diasLaborales) {
         this.diasLaborales = diasLaborales;
     }
 
@@ -72,21 +73,23 @@ public class Empleado {
         this.asistencia = asistencia;
     }
 
-    public Empleado(String nombre, String apellido, int telefono, Date nacimiento, ArrayList<Dia> diasLaborales, HashMap<Date, Boolean> asistencia) {
+    public Empleado(String nombre, String apellido, int telefono, Date nacimiento, HashSet<Dia> diasLaborales, HashMap<Date, Boolean> asistencia, String pais) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.nacimiento = nacimiento;
         this.diasLaborales = diasLaborales;
         this.asistencia=asistencia;
+        this.pais=pais;
     }
     public Empleado(){
         this.nombre="";
         this.apellido = "";
         this.telefono = 0;
         this.nacimiento = new Date();
-        this.diasLaborales = new ArrayList<Dia>();
+        this.diasLaborales = new HashSet<Dia>();
         this.asistencia= new HashMap<Date,Boolean>();
+        this.pais="";
     }
 
     @Override
