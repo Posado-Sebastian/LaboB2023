@@ -1,30 +1,30 @@
 package cosasPersona;
 
 public class Registro {
-    private double peso;
-    private double altura;
-    public Registro(double peso, double altura) {
+    private int peso;
+    private int altura;
+    public Registro(int peso, int altura) {
         this.peso = peso;
         this.altura = altura;
     }
     public Registro() {
-        this.peso = 0d;
-        this.altura = 0d;
+        this.peso = 0;
+        this.altura = 0;
     }
 
-    public double getPeso() {
+    public int getPeso() {
         return peso;
     }
 
-    public void setPeso(double peso) {
+    public void setPeso(int peso) {
         this.peso = peso;
     }
 
-    public double getAltura() {
+    public int getAltura() {
         return altura;
     }
 
-    public void setAltura(double altura) {
+    public void setAltura(int altura) {
         this.altura = altura;
     }
 }

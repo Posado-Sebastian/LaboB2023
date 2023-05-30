@@ -6,7 +6,7 @@ public class TV extends SeccionMultimedia{
 
     public TV() {
         super();
-        this.tecnologia =NULL;
+        this.tecnologia = null;
         this.respx =0;
     }
 
