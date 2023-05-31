@@ -68,7 +68,7 @@ public class SistemaLlamada {
                 n3=n2;
                 duracion2=timeLlamadaExterior(empleado);
                 n2=empleado;
-            }else if(duracion2<timeLlamadaExterior(empleado)){
+            }else if(duracion3<timeLlamadaExterior(empleado)){
                 duracion3=timeLlamadaExterior(empleado);
                 n3=empleado;
             }

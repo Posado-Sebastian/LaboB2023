@@ -28,5 +28,9 @@ public class Main {
         SistemaLlamada sistema = new SistemaLlamada(llamadas,empleados);
         sistema.listado();
         sistema.ranking();
+        System.out.println(sistema.timeLlamadaExterior(emp1));
+        System.out.println(sistema.timeLlamadaExterior(emp2));
+        System.out.println(sistema.timeLlamadaExterior(emp3));
+        System.out.println(sistema.timeLlamadaExterior(emp4));
     }
 }

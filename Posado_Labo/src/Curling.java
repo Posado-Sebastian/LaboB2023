@@ -54,8 +54,7 @@ public class Curling {
         for(int i=0; i<equipos.size(); i++){
             for(int j=i+1; j<equipos.size()-1; j++){
                 if(equipos.get(i).getHorario()==equipos.get(j).getHorario() && equipos.get(i).getDia().equals(equipos.get(j).getDia())){
-                    partidoTcT.setDiaPartido(equipos.get(i).getDia());
-                    partidoTcT.setHorarioPartido(equipos.get(i).getHorario());
+
                     partidoTcT.setEquipo1(equipos.get(i));
                     partidoTcT.setEquipo2(equipos.get(j));
                     partidos.add(partidoTcT);

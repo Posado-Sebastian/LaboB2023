@@ -5,6 +5,19 @@ import java.util.HashSet;
 
 public class SistemaCaloria {
     HashMap<Personaa, PlatosComido> familia;
+
+    public SistemaCaloria(HashMap<Personaa, PlatosComido> familia) {
+        this.familia = familia;
+    }
+
+    public HashMap<Personaa, PlatosComido> getFamilia() {
+        return familia;
+    }
+
+    public void setFamilia(HashMap<Personaa, PlatosComido> familia) {
+        this.familia = familia;
+    }
+
     public Float cantCalorias(Personaa persona1){
         Float cant = 0f;
         PlatosComido platosComidos = new PlatosComido();

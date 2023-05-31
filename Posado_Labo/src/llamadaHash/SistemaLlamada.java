@@ -3,6 +3,7 @@ package llamadaHash;
 import empresaYempleado.Empleado;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class SistemaLlamada {
     HashMap<Llamada, Empleado> llamadas;
@@ -22,7 +23,7 @@ public class SistemaLlamada {
         if(!llamadas.isEmpty()){
             for(Llamada llamada : llamadas.keySet()){
                 if(llamadas.get(llamada)==empleadoListado){
-                    llamada.toString();
+                    System.out.println(llamada.toString());
                 }
             }
         }
@@ -45,24 +46,30 @@ public class SistemaLlamada {
         int duracion2=0;
         Empleado n3 = new Empleado();
         int duracion3=0;
-        /*for (Empleado empleado: empleados.){
-            if(duracion1<timeLlamadaExterior(empleado)){
+        for(Map.Entry<Llamada,Empleado> p : llamadas.entrySet()){
+            if(duracion1==timeLlamadaExterior(p.getValue())){
+
+            }else if(duracion1<timeLlamadaExterior(p.getValue())){
                 duracion3=duracion2;
                 n3=n2;
                 duracion2=duracion1;
                 n2=n1;
-                duracion1=timeLlamadaExterior(empleado);
-                n1=empleado;
-            }else if(duracion2<timeLlamadaExterior(empleado)){
+                duracion1=timeLlamadaExterior(p.getValue());
+                n1=p.getValue();
+            }else if(duracion2==timeLlamadaExterior(p.getValue())){
+
+            }else if(duracion2<timeLlamadaExterior(p.getValue())){
                 duracion3=duracion2;
                 n3=n2;
-                duracion2=timeLlamadaExterior(empleado);
-                n2=empleado;
-            }else if(duracion2<timeLlamadaExterior(empleado)){
-                duracion3=timeLlamadaExterior(empleado);
-                n3=empleado;
+                duracion2=timeLlamadaExterior(p.getValue());
+                n2=p.getValue();
+            }else if(duracion3==timeLlamadaExterior(p.getValue())){
+
+            }else if(duracion3<timeLlamadaExterior(p.getValue())){
+                duracion3=timeLlamadaExterior(p.getValue());
+                n3=p.getValue();
             }
-        }*/
+        }
         System.out.println("n1: " + n1.getApellido() + " duracion: " + duracion1);
         System.out.println("n2: " + n2.getApellido() + " duracion: " + duracion2);
         System.out.println("n3: " + n3.getApellido() + " duracion: " + duracion3);

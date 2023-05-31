@@ -13,6 +13,26 @@ public class Empleado {
     private String pais;
     private HashSet<Dia> diasLaborales;
     private HashMap<Date, Boolean> asistencia;
+
+    public Empleado(String nombre, String apellido, int telefono, Date nacimiento, String pais, HashSet<Dia> diasLaborales, HashMap<Date, Boolean> asistencia) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.nacimiento = nacimiento;
+        this.pais = pais;
+        this.diasLaborales = diasLaborales;
+        this.asistencia = asistencia;
+    }
+    public Empleado(){
+        this.nombre="";
+        this.apellido = "";
+        this.telefono = 0;
+        this.nacimiento = new Date();
+        this.diasLaborales = new HashSet<Dia>();
+        this.asistencia= new HashMap<Date,Boolean>();
+        this.pais="";
+    }
+
     public String getApellido() {
         return apellido;
     }
@@ -73,24 +93,7 @@ public class Empleado {
         this.asistencia = asistencia;
     }
 
-    public Empleado(String nombre, String apellido, int telefono, Date nacimiento, HashSet<Dia> diasLaborales, HashMap<Date, Boolean> asistencia, String pais) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.nacimiento = nacimiento;
-        this.diasLaborales = diasLaborales;
-        this.asistencia=asistencia;
-        this.pais=pais;
-    }
-    public Empleado(){
-        this.nombre="";
-        this.apellido = "";
-        this.telefono = 0;
-        this.nacimiento = new Date();
-        this.diasLaborales = new HashSet<Dia>();
-        this.asistencia= new HashMap<Date,Boolean>();
-        this.pais="";
-    }
+
 
     @Override
     public String toString() {
