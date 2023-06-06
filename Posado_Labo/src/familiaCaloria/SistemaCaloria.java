@@ -38,6 +38,9 @@ public class SistemaCaloria {
         int calorias=0;
         Familiar familiar1=null;
         for (Familiar familiar : familia){
+            if(familiar1==null){
+                familiar1=familiar;
+            }
             if(familiar.caloriasTotales()<calorias){
                 calorias=familiar.caloriasTotales();
                 familiar1=familiar;
