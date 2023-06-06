@@ -1,4 +1,7 @@
-public class Jugador extends Persona{
+import pedidoPlato.Persona;
+import sistemaVehiculo.Fecha;
+
+public class Jugador extends Persona {
     private int numeroCamiseta;
     private Fecha fechaJugador;
 
@@ -40,6 +43,6 @@ public class Jugador extends Persona{
         this.numeroCamiseta = numeroCamiseta;
     }
     public void mostrarJugador(){
-        System.out.println("Nombre: " + getNombre() + "\n" + "Numero de camiseta: " + numeroCamiseta + "\n" + "Fecha de nacimiento: " + fechaJugador.larga());
+        System.out.println("Nombre: " + getNombre() + "\n" + "Numero de camiseta: " + numeroCamiseta + "\n" + "sistemaVehiculo.Fecha de nacimiento: " + fechaJugador.larga());
     }
 }

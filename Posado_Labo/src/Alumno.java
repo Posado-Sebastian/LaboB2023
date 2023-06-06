@@ -1,6 +1,9 @@
+import pedidoPlato.Persona;
+import sistemaVehiculo.Fecha;
+
 import java.util.ArrayList;
 
-public class Alumno extends Persona{
+public class Alumno extends Persona {
     private Fecha nacimiento;
     private ArrayList<Materia> materias;
     private String division;

@@ -1,3 +1,6 @@
+import pedidoPlato.Persona;
+import sistemaVehiculo.Fecha;
+
 public class Libro {
     private String titulo;
     private Persona autor;
@@ -87,7 +90,7 @@ public class Libro {
     }
     public void mostrarInformacion(){
 
-        System.out.println("Titulo: "+titulo+ "\r\n"+"Autor: "+ autor.mostrarDatos()+ "\r\n"+"ISBN: "+ISBN+ "\r\n"+"Cantidad de paginas: "+ cantidadPaginas+ "\r\n"+"Editorial: "+editorial+ "\r\n"+"Fecha: "+ fechaPublicacion.larga());
+        System.out.println("Titulo: "+titulo+ "\r\n"+"Autor: "+ autor.mostrarDatos()+ "\r\n"+"ISBN: "+ISBN+ "\r\n"+"Cantidad de paginas: "+ cantidadPaginas+ "\r\n"+"Editorial: "+editorial+ "\r\n"+"sistemaVehiculo.Fecha: "+ fechaPublicacion.larga());
     }
     public void libroAnterior(Fecha fechaPublicacion1){
         int i;

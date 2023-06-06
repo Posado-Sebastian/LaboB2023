@@ -1,3 +1,5 @@
+import pedidoPlato.Persona;
+
 public class Cancion {
     private String titulo;
     private Persona autor;

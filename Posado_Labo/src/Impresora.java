@@ -1,4 +1,6 @@
-public class Impresora extends Periferico{
+import computadora.Periferico;
+
+public class Impresora extends Periferico {
     private String puertoValido;
     private Boolean metodoImpresion; //false injecion yy true laser
     public Impresora(){

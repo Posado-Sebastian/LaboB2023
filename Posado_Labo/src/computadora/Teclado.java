@@ -1,14 +1,16 @@
+package computadora;
+
 import computadora.Periferico;
 
-public class Mouse extends Periferico {
+public class Teclado extends Periferico {
     private String tipoConector;
     private String puertoValido;
-    public Mouse(){
+    public Teclado(){
         super();
         this.tipoConector="";
         this.puertoValido="";
     }
-    public Mouse(String marca, double precio, String nombre, int stock, Boolean entradaSalida, String tipoConector, String puertoValido){
+    public Teclado(String marca, double precio, String nombre, int stock, Boolean entradaSalida, String tipoConector, String puertoValido){
         super(marca, precio, nombre, stock, entradaSalida, puertoValido);
         this.tipoConector=tipoConector;
     }

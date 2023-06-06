@@ -1,6 +1,7 @@
 package llamadaHash;
 
 import empresaYempleado.Empleado;
+import llamada.Llamada;
 
 import java.util.HashMap;
 import java.util.Map;
