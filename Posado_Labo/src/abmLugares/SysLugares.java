@@ -51,4 +51,45 @@ public class SysLugares {
         }
         System.out.println("El continente con menos poblacion es: " + continenteMenos.getNombre() + " con una poblacion de " + poblacion);
     }
+    public void agregarLugar(Lugar lugar, int codigo){//lugar y codigo del lugar al que pertenece
+        if(lugar instanceof Continente){
+            continentes.add((Continente) lugar);
+        }else if(lugar instanceof Pais){
+            for (Continente continente: continentes){
+                if(continente.getCodigo()==codigo){
+                    continente.agregarPais((Pais) lugar);
+                }
+            }
+        }else if(lugar instanceof Provincia){
+            for (Continente continente : continentes){
+                for(Pais pais : continente.getPaises()){
+                    if(pais.getCodigo()==codigo){
+                        pais.agregarProvincia((Provincia) lugar);
+                    }
+                }
+            }
+        } else if (lugar instanceof Ciudad) {
+            for (Continente continente : continentes){
+                for(Pais pais : continente.getPaises()){
+                    for(Provincia provincia : pais.getProvincias()) {
+                        if (provincia.getCodigo() == codigo) {
+                            provincia.agregarCiudad((Ciudad) lugar);
+                        }
+                    }
+                }
+            }
+        } else if (lugar instanceof Barrio) {
+            for (Continente continente : continentes){
+                for(Pais pais : continente.getPaises()){
+                    for(Provincia provincia : pais.getProvincias()) {
+                        for(Ciudad ciudad : provincia.getCiudades()) {
+                            if (ciudad.getCodigo() == codigo) {
+                                ciudad.agregarBarrio((Barrio) lugar);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

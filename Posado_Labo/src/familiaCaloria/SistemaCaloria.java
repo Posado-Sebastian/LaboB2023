@@ -23,7 +23,7 @@ public class SistemaCaloria {
         }
         System.out.println("Promedio de calorias de la familia es: " + calorias/familia.size());
     }
-    public void masCalorias(){
+    public Familiar masCalorias(){
         int calorias=0;
         Familiar familiar1=null;
         for (Familiar familiar : familia){
@@ -32,9 +32,9 @@ public class SistemaCaloria {
                 familiar1=familiar;
             }
         }
-        System.out.println("El familiar con mas calorias es: " + familiar1.getNombre());
+        return familiar1;
     }
-    public void menosCalorias(){
+    public Familiar menosCalorias(){
         int calorias=0;
         Familiar familiar1=null;
         for (Familiar familiar : familia){
@@ -46,6 +46,6 @@ public class SistemaCaloria {
                 familiar1=familiar;
             }
         }
-        System.out.println("El familiar con menos calorias es: " + familiar1.getNombre());
+        return familiar1;
     }
 }
