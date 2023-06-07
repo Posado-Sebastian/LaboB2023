@@ -92,4 +92,86 @@ public class SysLugares {
             }
         }
     }
+    public void eliminarLugar(Lugar lugar, int codigo){//lugar y codigo del lugar al que pertenece
+        if(lugar instanceof Continente){
+            continentes.add((Continente) lugar);
+        }else if(lugar instanceof Pais){
+            for (Continente continente: continentes){
+                if(continente.getCodigo()==codigo){
+                    continente.borrarPais((Pais) lugar);
+                }
+            }
+        }else if(lugar instanceof Provincia){
+            for (Continente continente : continentes){
+                for(Pais pais : continente.getPaises()){
+                    if(pais.getCodigo()==codigo){
+                        pais.borrarProvincia((Provincia) lugar);
+                    }
+                }
+            }
+        } else if (lugar instanceof Ciudad) {
+            for (Continente continente : continentes){
+                for(Pais pais : continente.getPaises()){
+                    for(Provincia provincia : pais.getProvincias()) {
+                        if (provincia.getCodigo() == codigo) {
+                            provincia.borrarCiudad((Ciudad) lugar);
+                        }
+                    }
+                }
+            }
+        } else if (lugar instanceof Barrio) {
+            for (Continente continente : continentes){
+                for(Pais pais : continente.getPaises()){
+                    for(Provincia provincia : pais.getProvincias()) {
+                        for(Ciudad ciudad : provincia.getCiudades()) {
+                            if (ciudad.getCodigo() == codigo) {
+                                ciudad.borrarBarrio((Barrio) lugar);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public void modificarLugar(Lugar lugar, Lugar lugarModificado,int codigo){//lugar, lugar modificado y codigo del lugar al que pertenece
+        if(lugar instanceof Continente){
+            continentes.add((Continente) lugar);
+        }else if(lugar instanceof Pais){
+            for (Continente continente: continentes){
+                if(continente.getCodigo()==codigo){
+                    continente.modificarPais((Pais) lugar, (Pais) lugarModificado);
+                }
+            }
+        }else if(lugar instanceof Provincia){
+            for (Continente continente : continentes){
+                for(Pais pais : continente.getPaises()){
+                    if(pais.getCodigo()==codigo){
+                        pais.modificarProvincia((Provincia) lugar, (Provincia) lugarModificado);
+                    }
+                }
+            }
+        } else if (lugar instanceof Ciudad) {
+            for (Continente continente : continentes){
+                for(Pais pais : continente.getPaises()){
+                    for(Provincia provincia : pais.getProvincias()) {
+                        if (provincia.getCodigo() == codigo) {
+                            provincia.modificarCiudad((Ciudad) lugar, (Ciudad) lugarModificado);
+                        }
+                    }
+                }
+            }
+        } else if (lugar instanceof Barrio) {
+            for (Continente continente : continentes){
+                for(Pais pais : continente.getPaises()){
+                    for(Provincia provincia : pais.getProvincias()) {
+                        for(Ciudad ciudad : provincia.getCiudades()) {
+                            if (ciudad.getCodigo() == codigo) {
+                                ciudad.modificarBarrio((Barrio) lugar, (Barrio) lugarModificado);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
