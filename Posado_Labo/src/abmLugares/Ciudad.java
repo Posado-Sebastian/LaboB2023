@@ -11,7 +11,8 @@ public class Ciudad extends Lugar {
     }
 
     public Ciudad(HashSet<Barrio> barrios) {
-        this.barrios = barrios;
+        super();
+        this.barrios = new HashSet<Barrio>();
     }
 
     public HashSet<Barrio> getBarrios() {

@@ -10,8 +10,9 @@ public class Pais extends Lugar{
         this.provincias = provincias;
     }
 
-    public Pais(HashSet<Provincia> provincias) {
-        this.provincias = provincias;
+    public Pais() {
+        super();
+        this.provincias = new HashSet<Provincia>();
     }
 
     public HashSet<Provincia> getProvincias() {

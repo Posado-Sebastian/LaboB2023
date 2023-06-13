@@ -2,10 +2,10 @@ package abmLugares;
 
 import java.util.HashSet;
 
-public class SysLugares {
+public class SysLugar {
     private HashSet<Continente> continentes;
 
-    public SysLugares(HashSet<Continente> continentes) {
+    public SysLugar(HashSet<Continente> continentes) {
         this.continentes = continentes;
     }
 

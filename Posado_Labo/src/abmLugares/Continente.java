@@ -10,8 +10,9 @@ public class Continente extends Lugar{
         this.paises = paises;
     }
 
-    public Continente(HashSet<Pais> paises) {
-        this.paises = paises;
+    public Continente() {
+        super();
+        this.paises = new HashSet<Pais>();
     }
 
     public HashSet<Pais> getPaises() {

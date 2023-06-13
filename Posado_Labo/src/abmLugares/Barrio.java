@@ -10,8 +10,9 @@ public class Barrio extends Lugar{
         this.poblacion = poblacion;
     }
 
-    public Barrio(int poblacion) {
-        this.poblacion = poblacion;
+    public Barrio() {
+        super();
+        this.poblacion = 0;
     }
 
     public int getPoblacion() {
