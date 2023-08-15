@@ -51,11 +51,11 @@ public class SistemaLlamada {
         return tiempo;
     }
     public void ranking(){
-        EmpleadoLlamada n1 = new EmpleadoLlamada();
+        EmpleadoLlamada n1 = new EmpleadoLlamada("jose","jose", 1, 2);
         int duracion1=0;
-        EmpleadoLlamada n2 = new EmpleadoLlamada();
+        EmpleadoLlamada n2 = new EmpleadoLlamada("jose","jose", 1, 2);
         int duracion2=0;
-        EmpleadoLlamada n3 = new EmpleadoLlamada();
+        EmpleadoLlamada n3 = new EmpleadoLlamada("jose","jose", 1, 2);
         int duracion3=0;
         for (EmpleadoLlamada empleado: empleados){
             if(duracion1<timeLlamadaExterior(empleado)){

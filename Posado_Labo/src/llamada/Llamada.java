@@ -15,8 +15,8 @@ public class Llamada {
         this.duracion = duracion;
     }
     public Llamada(){
-        this.origen = new EmpleadoLlamada();
-        this.destino = new EmpleadoLlamada();
+        this.origen = null;
+        this.destino = null;
         this.fecha = new Date();
         this.duracion = 0;
     }

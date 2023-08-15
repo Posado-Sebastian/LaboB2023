@@ -3,8 +3,7 @@ package tiendaMultimedia;
 public class CargadoresPortatiles extends SeccionCargadores{
     private int cantCargas;
 
-    public CargadoresPortatiles(String nombre, double precio, int stock, int cantCargas) {
-        super(nombre, precio, stock);
+    public CargadoresPortatiles(int cantCargas) {
         this.cantCargas = cantCargas;
     }
 

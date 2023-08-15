@@ -6,12 +6,10 @@ public class Pais extends Lugar{
     private HashSet<Provincia> provincias;
 
     public Pais(String nombre, int codigo, HashSet<LatitudLongitud> coordenadas, HashSet<Provincia> provincias) {
-        super(nombre, codigo, coordenadas);
         this.provincias = provincias;
     }
 
     public Pais() {
-        super();
         this.provincias = new HashSet<Provincia>();
     }
 
@@ -32,10 +30,10 @@ public class Pais extends Lugar{
         provincias.remove(provinciaAmodificar);
         provincias.add(provinciaModificado);
     }
-    public int calcularPoblacionProvincia(){
+    @Override public int calcularPoblacion(){
         int poblacion=0;
         for(Provincia provincia : provincias){
-            poblacion=provincia.calcularPoblacionCiudad()+poblacion;
+            poblacion=provincia.calcularPoblacion()+poblacion;
         }
         return poblacion;
     }
@@ -43,7 +41,7 @@ public class Pais extends Lugar{
         int poblacion=0;
         for (Provincia provincia : provincias){
             if(provincia.getCodigo()==codigoP){
-                poblacion=provincia.calcularPoblacionCiudad();
+                poblacion=provincia.calcularPoblacion();
             }
         }
         return poblacion;

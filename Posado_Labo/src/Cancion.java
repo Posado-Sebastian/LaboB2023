@@ -6,12 +6,12 @@ public class Cancion {
     private String genero;
     public Cancion(){
         this.titulo=" ";
-        this.autor=new Persona();
+        this.autor=null;
         this.genero="n/a";
     }
     public Cancion(String titulo, Persona autor){
         this.titulo="asdasdads";
-        this.autor=new Persona();
+        this.autor=null;
         this.genero="MEITALACERO";
     }
 
@@ -39,6 +39,6 @@ public class Cancion {
         this.genero = genero;
     }
     public void mostrarGenero(){
-        System.out.println("Titulo: "+titulo+"\n"+"Autor: "+ autor.mostrarDatos()+"\n"+"Genero: "+ genero);
+        System.out.println("Titulo: "+titulo+"\n"+"Autor: "+ autor.toString()+"\n"+"Genero: "+ genero);
     }
 }

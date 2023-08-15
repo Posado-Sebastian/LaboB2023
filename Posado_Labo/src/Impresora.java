@@ -8,9 +8,10 @@ public class Impresora extends Periferico {
         this.puertoValido="";
         this.metodoImpresion=false;
     }
-    public Impresora(String marca, double precio, String nombre, int stock, Boolean entradaSalida, String puertoValido, Boolean metodoImpresion){
-        super(marca, precio, nombre, stock, entradaSalida, puertoValido);
-        this.metodoImpresion=metodoImpresion;
+
+    public Impresora(String puertoValido, Boolean metodoImpresion) {
+        this.puertoValido = puertoValido;
+        this.metodoImpresion = metodoImpresion;
     }
 
     public String getPuertoValido() {

@@ -1,29 +1,12 @@
 package sistemaVehiculo;
 
-public class Vehiculo {
+public abstract class Vehiculo {
     private String marca;
     private String modelo;
     private Color color;
     private int velocidad;
     private int cantidadRuedas;
     private Fecha anioProduccion;
-    public Vehiculo(){
-        this.marca="n/a";
-        this.modelo="n/a";
-        this.color=null;
-        this.velocidad=0;
-        this.cantidadRuedas=4;
-        this.anioProduccion=new Fecha();
-    }
-    public Vehiculo(String marca, String modelo, Color color, int velocidad, int cantidadRuedas, Fecha anioProduccion){
-        this.marca=marca;
-        this.modelo=modelo;
-        this.color=color;
-        this.velocidad=velocidad;
-        this.cantidadRuedas=cantidadRuedas;
-        this.anioProduccion=anioProduccion;
-    }
-
     public void setAnioProduccion(Fecha anioProduccion) {
         this.anioProduccion = anioProduccion;
     }

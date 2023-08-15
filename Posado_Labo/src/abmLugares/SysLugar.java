@@ -30,8 +30,8 @@ public class SysLugar {
         int poblacion=0;
         Continente continenteMas=null;
         for (Continente continente : continentes){
-            if(continente.calcularPoblacionPais()>poblacion){
-                poblacion=continente.calcularPoblacionPais();
+            if(continente.calcularPoblacion()>poblacion){
+                poblacion=continente.calcularPoblacion();
                 continenteMas=continente;
             }
         }
@@ -44,8 +44,8 @@ public class SysLugar {
             if(continenteMenos==null){
                 continenteMenos=continente;
             }
-            if(continente.calcularPoblacionPais()<poblacion){
-                poblacion=continente.calcularPoblacionPais();
+            if(continente.calcularPoblacion()<poblacion){
+                poblacion=continente.calcularPoblacion();
                 continenteMenos=continente;
             }
         }
@@ -173,5 +173,34 @@ public class SysLugar {
                 }
             }
         }
+    }
+    public void paisMasPoblacion(){
+        int poblacion=0;
+        Pais paisMas=null;
+        for(Continente continente : continentes){
+            for (Pais pais : continente.getPaises()) {
+                if (pais.calcularPoblacion() > poblacion) {
+                    poblacion = pais.calcularPoblacion();
+                    paisMas = pais;
+                }
+            }
+        }
+        System.out.println("El pais con mas poblacion es: " + paisMas.getNombre() + " con una poblacion de " + poblacion);
+    }
+    public void paisMenosPoblacion(){
+        int poblacion=0;
+        Pais paisMenos=null;
+        for(Continente continente : continentes) {
+            for (Pais pais : continente.getPaises()) {
+                if (paisMenos == null) {
+                    paisMenos = pais;
+                }
+                if (pais.calcularPoblacion() < poblacion) {
+                    poblacion = pais.calcularPoblacion();
+                    paisMenos = pais;
+                }
+            }
+        }
+        System.out.println("El pais con menos poblacion es: " + paisMenos.getNombre() + " con una poblacion de " + poblacion);
     }
 }

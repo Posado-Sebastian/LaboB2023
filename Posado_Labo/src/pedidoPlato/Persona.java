@@ -1,22 +1,11 @@
 package pedidoPlato;
 
-public class Persona {
+public abstract class Persona {
     private int edad;
     private int direccion;
     private String nombre;
     private String apellido;
-    public Persona(){
-        this.edad=0;
-        this.direccion=0;
-        this.nombre="N/A";
-        this.apellido="";
-    }
-    public Persona(int edad, int direccion, String nombre, String apellido){
-        this.edad=edad;
-        this.direccion=direccion;
-        this.nombre=nombre;
-        this.apellido=apellido;
-    }
+
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
@@ -53,8 +42,4 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String mostrarDatos(){
-        String datos="Edad: "+edad+" direccion: "+direccion+" nombre: "+nombre;
-        return datos;
-    }
 }

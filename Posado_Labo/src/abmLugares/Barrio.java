@@ -6,12 +6,10 @@ public class Barrio extends Lugar{
     private int poblacion;
 
     public Barrio(String nombre, int codigo, HashSet<LatitudLongitud> coordenadas, int poblacion) {
-        super(nombre, codigo, coordenadas);
         this.poblacion = poblacion;
     }
 
     public Barrio() {
-        super();
         this.poblacion = 0;
     }
 
@@ -21,5 +19,8 @@ public class Barrio extends Lugar{
 
     public void setPoblacion(int poblacion) {
         this.poblacion = poblacion;
+    }
+    @Override public int calcularPoblacion(){
+        return poblacion;
     }
 }

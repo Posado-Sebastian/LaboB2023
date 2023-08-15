@@ -2,13 +2,10 @@ package pedidoPlato;
 
 public class Profesor extends Persona {
     private int porcentajeDescuento;
-    public Profesor (){
-        super();
-        this.porcentajeDescuento=0;
-    }
-    public Profesor (int edad, int direccion, String nombre, String apellido, int porcentajeDescuento){
-        super(edad, direccion, nombre, apellido);
-        this.porcentajeDescuento=porcentajeDescuento;
+
+    public Profesor(String nombre, int porcentajeDescuento) {
+        super(nombre);
+        this.porcentajeDescuento = porcentajeDescuento;
     }
 
     @Override

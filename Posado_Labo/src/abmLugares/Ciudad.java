@@ -6,12 +6,10 @@ public class Ciudad extends Lugar {
     private HashSet<Barrio> barrios;
 
     public Ciudad(String nombre, int codigo, HashSet<LatitudLongitud> coordenadas, HashSet<Barrio> barrios) {
-        super(nombre, codigo, coordenadas);
         this.barrios = barrios;
     }
 
     public Ciudad(HashSet<Barrio> barrios) {
-        super();
         this.barrios = new HashSet<Barrio>();
     }
 
@@ -32,7 +30,7 @@ public class Ciudad extends Lugar {
         barrios.remove(barrioAmodificar);
         barrios.add(barrioModificado);
     }
-    public int calcularPoblacionBarrios(){
+    @Override public int calcularPoblacion(){
         int poblacion=0;
         for (Barrio barrio : barrios){
             poblacion=barrio.getPoblacion()+poblacion;

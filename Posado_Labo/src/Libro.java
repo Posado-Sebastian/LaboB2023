@@ -10,7 +10,7 @@ public class Libro {
     private Fecha fechaPublicacion;
     public Libro(){
         this.titulo="n/a";
-        this.autor=new Persona(0,0,"n/a","");
+        this.autor=null;
         this.ISBN=0;
         this.cantidadPaginas=0;
         this.editorial="n/a";
@@ -27,13 +27,13 @@ public class Libro {
     public Libro(String titulo){
         this.titulo=titulo;
         this.editorial="santillana";
-        this.autor=new Persona(32,4550,"jose","");
+        this.autor=null;
         this.ISBN=123;
         this.cantidadPaginas=13;
         this.fechaPublicacion=new Fecha(31,8,2005);
     }
     public Libro(String titulo, String editorial){
-        this.autor=new Persona(17, 3980, "Seib","");
+        this.autor=null;
         this.ISBN=455;
         this.cantidadPaginas=696;
         this.fechaPublicacion=new Fecha(28,8,2008);
@@ -90,7 +90,7 @@ public class Libro {
     }
     public void mostrarInformacion(){
 
-        System.out.println("Titulo: "+titulo+ "\r\n"+"Autor: "+ autor.mostrarDatos()+ "\r\n"+"ISBN: "+ISBN+ "\r\n"+"Cantidad de paginas: "+ cantidadPaginas+ "\r\n"+"Editorial: "+editorial+ "\r\n"+"sistemaVehiculo.Fecha: "+ fechaPublicacion.larga());
+        System.out.println("Titulo: "+titulo+ "\r\n"+"Autor: "+ autor.toString()+ "\r\n"+"ISBN: "+ISBN+ "\r\n"+"Cantidad de paginas: "+ cantidadPaginas+ "\r\n"+"Editorial: "+editorial+ "\r\n"+"sistemaVehiculo.Fecha: "+ fechaPublicacion.larga());
     }
     public void libroAnterior(Fecha fechaPublicacion1){
         int i;

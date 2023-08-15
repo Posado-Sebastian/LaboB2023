@@ -1,4 +1,4 @@
 package computadora;
 
-public class MetodoPago {
+public abstract class MetodoPago {
 }

@@ -8,14 +8,6 @@ import java.util.HashMap;
 public class PersonaPeso extends Persona {
     private HashMap<Date, Registro> control;
 
-    public PersonaPeso(HashMap<Date, Registro> control) {
-        this.control = control;
-    }
-
-    public PersonaPeso(int edad, int direccion, String nombre, String apellido, HashMap<Date, Registro> control) {
-        super(edad, direccion, nombre, apellido);
-        this.control = control;
-    }
 
     public PersonaPeso(String nombre, HashMap<Date, Registro> control) {
         super(nombre);

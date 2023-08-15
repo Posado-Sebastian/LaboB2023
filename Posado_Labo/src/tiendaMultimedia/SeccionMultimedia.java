@@ -1,11 +1,5 @@
 package tiendaMultimedia;
 
-public class SeccionMultimedia extends Producto{
-    public SeccionMultimedia(){
-        super();
-    }
+public abstract class SeccionMultimedia extends Producto{
 
-    public SeccionMultimedia(String nombre, double precio, int stock) {
-        super(nombre, precio, stock);
-    }
 }

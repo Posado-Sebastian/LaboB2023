@@ -5,11 +5,6 @@ public class Jugador extends Persona {
     private int numeroCamiseta;
     private Fecha fechaJugador;
 
-    public Jugador(){
-        this.numeroCamiseta=-1;
-        this.fechaJugador=new Fecha();
-
-    }
     public Jugador(String nombre, int numeroCamiseta, Fecha fechaJugador){
         super(nombre);
         this.numeroCamiseta=numeroCamiseta;

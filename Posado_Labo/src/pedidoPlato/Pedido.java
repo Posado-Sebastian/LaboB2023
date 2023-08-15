@@ -12,7 +12,7 @@ public class Pedido {
         this.fechaCreacion=new Date();
         this.plato=new Plato();
         this.entregado=false;
-        this.cliente=new Persona();
+        this.cliente=null;
         this.horaEntrega=new Date();
     }
     public Pedido(Date fechaCreacion, Plato plato, Boolean entregado, Persona cliente, Date horaEntrega){

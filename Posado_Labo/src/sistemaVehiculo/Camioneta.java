@@ -14,12 +14,13 @@ public class Camioneta extends Vehiculo {
         this.carga=0;
         this.cargaMaxima=0;
     }
-    public Camioneta(String marca, String modelo, Color color, int velocidad, int cantidadRuedas, Fecha anioProduccion, String patente, int carga, int cargaMaxima){
-        super(marca, modelo, color, velocidad, cantidadRuedas, anioProduccion);
-        this.patente=patente;
-        this.carga=carga;
-        this.cargaMaxima=cargaMaxima;
+
+    public Camioneta(String patente, int cargaMaxima, int carga) {
+        this.patente = patente;
+        this.cargaMaxima = cargaMaxima;
+        this.carga = carga;
     }
+
     public void setCargaMaxima(int cargaMaxima) {
         this.cargaMaxima = cargaMaxima;
     }

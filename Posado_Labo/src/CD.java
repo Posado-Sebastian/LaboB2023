@@ -22,7 +22,7 @@ public class CD {
     public void verCancion(int posicion){
         Cancion cancion = cancions.get(posicion);
         Persona autor = cancion.getAutor();
-        String datosAutor = autor.mostrarDatos();
+        String datosAutor = autor.toString();
         System.out.println("Titulo: " + cancion.getTitulo()+"\n"+datosAutor);
     }
     public void grabaCancion(int posicion, Cancion nuevaCancion){
@@ -39,7 +39,7 @@ public class CD {
         for (int i=0; i<cantidad; i++){
             System.out.println("ingresar titulo");
             String titulo = entrada2.nextLine();
-            cancions.add(new Cancion(titulo, new Persona()));
+            cancions.add(new Cancion(titulo, null));
         }
     }
 }

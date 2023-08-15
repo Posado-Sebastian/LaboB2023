@@ -6,17 +6,12 @@ public class EmpleadoLlamada extends Persona {
     private String pais;
     private int anio;
     private int DNI;
-    public EmpleadoLlamada(int edad, int direccion, String nombre, String apellido, String pais, int anio, int DNI) {
-        super(edad, direccion, nombre, apellido);
+
+    public EmpleadoLlamada(String nombre, String pais, int anio, int DNI) {
+        super(nombre);
         this.pais = pais;
         this.anio = anio;
         this.DNI = DNI;
-    }
-    public EmpleadoLlamada(){
-        super();
-        this.pais = "";
-        this.anio = 0;
-        this.DNI = 0;
     }
 
     public String getPais() {
