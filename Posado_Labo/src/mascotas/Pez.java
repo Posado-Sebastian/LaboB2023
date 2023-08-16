@@ -3,7 +3,11 @@ package mascotas;
 public class Pez extends Mascota{
     private static int vidas=10;
 
+    public Pez(String nombre, Dueño dueño, int alegria) {
+        super(nombre, dueño, alegria);
+    }
     public Pez() {
+        super();
     }
 
     public static int getVidas() {

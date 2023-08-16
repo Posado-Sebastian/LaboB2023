@@ -1,7 +1,11 @@
 package mascotas;
 
 public class Perro extends Mascota{
+    public Perro(String nombre, Dueño dueño, int alegria) {
+        super(nombre, dueño, alegria);
+    }
     public Perro() {
+        super();
     }
 
     @Override

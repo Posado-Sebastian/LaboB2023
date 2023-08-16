@@ -75,14 +75,5 @@ public class SistemaMascota {
 
     }
     public static void main(String[] args) {
-        SistemaMascota a = new SistemaMascota(new HashSet<Mascota>());
-        a.altaMascota(new Dueño("jose"), "carlos", new Pajarito(true));
-        a.altaMascota(new Dueño("jose"), "carlos", new Perro());
-        for(Mascota b: a.mascotas){
-            System.out.println(b.getDueño());
-            System.out.println(b.getNombre());
-            System.out.println(b.getClass());
-
-        }
     }
 }

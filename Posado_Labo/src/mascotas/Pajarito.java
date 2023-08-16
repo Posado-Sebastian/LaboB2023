@@ -5,10 +5,15 @@ import abmLugares.Pais;
 public class Pajarito extends Mascota{
     private boolean cantor;
 
-    public Pajarito(boolean cantor) {
-        super();
+    public Pajarito(String nombre, Dueño dueño, int alegria, boolean cantor) {
+        super(nombre, dueño, alegria);
         this.cantor = cantor;
     }
+    public Pajarito() {
+        super();
+        this.cantor = false;
+    }
+
 
     public boolean isCantor() {
         return cantor;
@@ -42,10 +47,7 @@ public class Pajarito extends Mascota{
     }
 
     public static void main(String[] args) {
-        Pajarito a = new Pajarito(true);
-        Dueño b = new Dueño("jose");
-        a.setDueño(b);
-        System.out.println(a.saludar(b));
+
     }
 }
 

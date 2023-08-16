@@ -27,12 +27,14 @@ public class Rectangulo extends FiguraGeometrica{
     }
 
     @Override
-    public void areaRectangulo() {
-        super.areaRectangulo();
+    double perimetro() {
+        int perimetro = getAltura()*2 + getBase()*2;
+        return perimetro;
     }
 
     @Override
-    public void perimetroRectangulo() {
-        super.perimetroRectangulo();
+    double area() {
+        int area = getBase()*getAltura();
+        return area;
     }
 }

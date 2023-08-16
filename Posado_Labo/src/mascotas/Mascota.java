@@ -7,6 +7,17 @@ public abstract class Mascota {
     private Dueño dueño;
     private  int alegria;
 
+    public Mascota(String nombre, Dueño dueño, int alegria) {
+        this.nombre = nombre;
+        this.dueño = dueño;
+        this.alegria = alegria;
+    }
+    public Mascota(){
+        this.nombre = "";
+        this.dueño = new Dueño("");
+        this.alegria = 0;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -36,7 +47,7 @@ public abstract class Mascota {
             setAlegria(getAlegria()-1);
         }
     }
-        public String devuelveTipo(){
+    public String devuelveTipo(){
             return getClass().getCanonicalName();
         }
 }

@@ -17,13 +17,13 @@ public class Circulo extends FiguraGeometrica{
     }
 
     @Override
-    public double areaCirculo() {
-        return super.areaCirculo();
+    double perimetro() {
+        return getRadio()* Math.PI *2;
     }
 
     @Override
-    public double perimetroCirculo() {
-        return super.perimetroCirculo();
+    double area() {
+        return Math.pow(getRadio(),2)* Math.PI;
     }
 
     public static void main(String[] args) {

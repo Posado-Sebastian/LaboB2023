@@ -1,4 +1,4 @@
-public class FiguraGeometrica {
+public abstract class FiguraGeometrica {
     private int radio;
     private int base;
     private int altura;
@@ -41,19 +41,6 @@ public class FiguraGeometrica {
     public int getRadio() {
         return radio;
     }
-    public double areaCirculo(){
-        return Math.pow(getRadio(),2)* Math.PI;
-    }
-
-    public double perimetroCirculo(){
-        return getRadio()* Math.PI *2;
-    }
-    public void areaRectangulo(){
-        int area = getBase()*getAltura();
-        System.out.println(area);
-    }
-    public void perimetroRectangulo(){
-        int perimetro = getAltura()*2 + getBase()*2;
-        System.out.println(perimetro);
-    }
+    abstract double perimetro();
+    abstract double area();
 }
