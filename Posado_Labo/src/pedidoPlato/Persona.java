@@ -6,7 +6,12 @@ public abstract class Persona {
     private String nombre;
     private String apellido;
 
-
+    public Persona(){
+        this.edad=0;
+        this.direccion=0;
+        this.nombre="";
+        this.apellido="";
+    }
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
