@@ -6,6 +6,13 @@ public abstract class Persona {
     private String nombre;
     private String apellido;
 
+    public Persona(int edad, int direccion, String nombre, String apellido) {
+        this.edad = edad;
+        this.direccion = direccion;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
     public Persona(){
         this.edad=0;
         this.direccion=0;

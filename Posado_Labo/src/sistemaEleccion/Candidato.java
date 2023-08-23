@@ -12,8 +12,9 @@ public class Candidato extends Persona {
     private HashMap<ProvinciaVoto, Integer> votosProvincia;
     private HashMap<TemaPropuesta, ArrayList<String>> propuestas;
     private Partido partido;
-    public Candidato(String nombre, Date nacimiento, int dni, HashMap<ProvinciaVoto, Integer> votosProvincia, HashMap<TemaPropuesta, ArrayList<String>> propuestas, Partido partido) {
-        super(nombre);
+
+    public Candidato(int edad, int direccion, String nombre, String apellido, Date nacimiento, int dni, HashMap<ProvinciaVoto, Integer> votosProvincia, HashMap<TemaPropuesta, ArrayList<String>> propuestas, Partido partido) {
+        super(edad, direccion, nombre, apellido);
         this.nacimiento = nacimiento;
         this.dni = dni;
         this.votosProvincia = votosProvincia;
@@ -68,5 +69,8 @@ public class Candidato extends Persona {
 
     public void setPartido(Partido partido) {
         this.partido = partido;
+    }
+    public void sumarVoto(ProvinciaVoto provinciaVoto){
+        partido.getCandidato().getVotosProvincia().replace(provinciaVoto, votosProvincia.get(provinciaVoto)+1);
     }
 }

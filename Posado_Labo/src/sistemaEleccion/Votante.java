@@ -9,18 +9,27 @@ public class Votante extends Persona {
     private Date nacimiento;
     private Boolean controlVoto; //control para saber si voto o no
     private static String nacionalidad = "argentina";
+    private ProvinciaVoto provinciaVoto;
 
-    public Votante(int dni, Date nacimiento, Boolean controlVoto) {
+    public Votante(int edad, int direccion, String nombre, String apellido, int dni, Date nacimiento, Boolean controlVoto, ProvinciaVoto provinciaVoto) {
+        super(edad, direccion, nombre, apellido);
         this.dni = dni;
         this.nacimiento = nacimiento;
         this.controlVoto = controlVoto;
+        this.provinciaVoto = provinciaVoto;
     }
 
-    public Votante(String nombre, int dni, Date nacimiento, Boolean controlVoto) {
-        super(nombre);
-        this.dni = dni;
-        this.nacimiento = nacimiento;
+    public Votante(Boolean controlVoto, ProvinciaVoto provinciaVoto) {
         this.controlVoto = controlVoto;
+        this.provinciaVoto = provinciaVoto;
+    }
+
+    public ProvinciaVoto getProvinciaVoto() {
+        return provinciaVoto;
+    }
+
+    public void setProvinciaVoto(ProvinciaVoto provinciaVoto) {
+        this.provinciaVoto = provinciaVoto;
     }
 
     public int getDni() {
