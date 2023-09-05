@@ -6,6 +6,7 @@ public class Pantalla extends Periferico {
     private String puertoValido;
 
     public Pantalla(String puertoValido) {
+        super();
         this.puertoValido = puertoValido;
     }
 

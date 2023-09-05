@@ -1,7 +1,8 @@
 package sistemaSensor;
 
 public class DetectorTemperatura extends Alarma {
-    public DetectorTemperatura() {
+    public DetectorTemperatura(int nroAlarma, Boolean estado, float medida, float umbral, int anio) {
+        super(nroAlarma, estado, medida, umbral, anio);
     }
 
     @Override

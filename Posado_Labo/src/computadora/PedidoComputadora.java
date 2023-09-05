@@ -16,6 +16,11 @@ public class PedidoComputadora {
         this.componentes = componentes;
         this.precioFinal = precioFinal;
         this.metodoPago = metodoPago;
+    }public PedidoComputadora() {
+        this.cliente = null;
+        this.componentes = new ArrayList<Componente>();
+        this.precioFinal = 9;
+        this.metodoPago = null;
     }
 
     public Persona getCliente() {

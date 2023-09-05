@@ -1,7 +1,8 @@
 package sistemaSensor;
 
 public class SensorHumo extends Alarma {
-    public SensorHumo() {
+    public SensorHumo(int nroAlarma, Boolean estado, float medida, float umbral, int anio) {
+        super(nroAlarma, estado, medida, umbral, anio);
     }
 
     @Override

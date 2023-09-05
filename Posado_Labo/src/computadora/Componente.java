@@ -5,6 +5,21 @@ public abstract class Componente {
     private double precio;
     private String nombre;
     private int stock;
+
+    public Componente(String marca, double precio, String nombre, int stock) {
+        this.marca = marca;
+        this.precio = precio;
+        this.nombre = nombre;
+        this.stock = stock;
+    }
+
+    public Componente() {
+        this.marca = "";
+        this.precio = 0;
+        this.nombre = "";
+        this.stock = 0;
+    }
+
     public void setStock(int stock) {
         this.stock = stock;
     }
