@@ -5,6 +5,22 @@ public abstract class Persona {
     private int direccion;
     private String nombre;
     private String apellido;
+    private int dni;
+
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+    public Persona(String nombre, String apellido, int dni) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+    }
 
     public Persona(int edad, int direccion, String nombre, String apellido) {
         this.edad = edad;
