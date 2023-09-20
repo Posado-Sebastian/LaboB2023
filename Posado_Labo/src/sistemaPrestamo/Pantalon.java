@@ -36,14 +36,6 @@ public class Pantalon extends Ropa{
         this.largo = largo;
     }
 
-    @Override
-    public String toString() {
-        return "Pantalon{" +
-                " medidaCintura=" + medidaCintura +
-                ", medidaCadera=" + medidaCadera +
-                ", largo=" + largo +
-                '}';
-    }
 
     @Override
     public boolean prestar() {
@@ -63,5 +55,14 @@ public class Pantalon extends Ropa{
         }else {
             System.out.println("El artículo ingresado no podra ingresar al circuito de préstamos");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Pantalon{" +super.toString()+
+                "medidaCintura=" + medidaCintura +
+                ", medidaCadera=" + medidaCadera +
+                ", largo=" + largo +
+                '}';
     }
 }

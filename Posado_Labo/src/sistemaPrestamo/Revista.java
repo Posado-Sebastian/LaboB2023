@@ -20,13 +20,6 @@ public class Revista extends Lectura{
     }
 
     @Override
-    public String toString() {
-        return "Revista{" +
-                "fechaPublicacion=" + fechaPublicacion +", codigo"+getCodigo()+
-                '}';
-    }
-
-    @Override
     public boolean prestar() {
         if(fechaPublicacion.isBefore(LocalDateTime.now().minusMonths(3))){
             return true;
@@ -41,5 +34,12 @@ public class Revista extends Lectura{
         }else {
             System.out.println("El artículo ingresado no podra ingresar al circuito de préstamos");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Revista{" +super.toString()+
+                "fechaPublicacion=" + fechaPublicacion +
+                '}';
     }
 }

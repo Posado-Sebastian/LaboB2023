@@ -19,13 +19,6 @@ public class Libro extends Lectura{
     }
 
     @Override
-    public String toString() {
-        return "Libro{" +
-                "capitulosPaginas=" + capitulosPaginas +", codigo"+getCodigo()+
-                '}';
-    }
-
-    @Override
     public boolean prestar() {
         if(capitulosPaginas.size()%2!=0){
             System.out.println("El libro se dará prestado");
@@ -38,10 +31,17 @@ public class Libro extends Lectura{
 
     @Override
     public void agregarElemento() {
-        if (prestar()){
+        if (prestar()) {
             System.out.println("El artículo ingresado puede ingresar al circuito de préstamos");
-        }else {
+        } else {
             System.out.println("El artículo ingresado no podra ingresar al circuito de préstamos");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +super.toString()+
+                "capitulosPaginas=" + capitulosPaginas +
+                '}';
     }
 }

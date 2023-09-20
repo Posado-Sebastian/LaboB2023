@@ -1,6 +1,6 @@
 package sistemaPrestamo;
 
-public abstract class Lectura extends Objeto implements Prestable{
+public abstract class Lectura implements Prestable{
     private int codigo;
     private String titulo;
     private int añoPublicacion;
@@ -43,5 +43,14 @@ public abstract class Lectura extends Objeto implements Prestable{
     @Override
     public void agregarElemento() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Lectura{" +
+                "codigo=" + codigo +
+                ", titulo='" + titulo + '\'' +
+                ", añoPublicacion=" + añoPublicacion +
+                '}';
     }
 }

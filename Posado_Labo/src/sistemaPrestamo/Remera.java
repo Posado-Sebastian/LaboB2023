@@ -36,14 +36,6 @@ public class Remera extends Ropa{
         this.largoTorso = largoTorso;
     }
 
-    @Override
-    public String toString() {
-        return "Remera{" +
-                "medidaEspalda=" + medidaEspalda +
-                ", contorno=" + contorno +
-                ", largoTorso=" + largoTorso +
-                '}';
-    }
 
     @Override
     public boolean prestar() {
@@ -63,5 +55,14 @@ public class Remera extends Ropa{
         }else {
             System.out.println("El artículo ingresado no podra ingresar al circuito de préstamos");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Remera{" +super.toString()+
+                "medidaEspalda=" + medidaEspalda +
+                ", contorno=" + contorno +
+                ", largoTorso=" + largoTorso +
+                '}';
     }
 }
