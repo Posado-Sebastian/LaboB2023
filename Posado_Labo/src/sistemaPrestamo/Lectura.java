@@ -1,6 +1,6 @@
 package sistemaPrestamo;
 
-public abstract class Lectura extends Objeto {
+public abstract class Lectura extends Objeto implements Prestable{
     private int codigo;
     private String titulo;
     private int añoPublicacion;
@@ -33,5 +33,15 @@ public abstract class Lectura extends Objeto {
 
     public void setAñoPublicacion(int añoPublicacion) {
         this.añoPublicacion = añoPublicacion;
+    }
+
+    @Override
+    public boolean prestar() {
+        return false;
+    }
+
+    @Override
+    public void agregarElemento() {
+
     }
 }

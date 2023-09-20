@@ -1,6 +1,6 @@
 package sistemaPrestamo;
 
-public abstract class Ropa extends Objeto{
+public abstract class Ropa extends Objeto implements Prestable{
     private String color;
     private Material material;
     private String marca;
@@ -43,5 +43,15 @@ public abstract class Ropa extends Objeto{
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public boolean prestar() {
+        return false;
+    }
+
+    @Override
+    public void agregarElemento() {
+
     }
 }

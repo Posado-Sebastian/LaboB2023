@@ -1,6 +1,6 @@
 package sistemaPrestamo;
 
-public class Remera extends Ropa implements Prestable{
+public class Remera extends Ropa{
     private Double medidaEspalda;
     private Double contorno;
     private Double largoTorso;

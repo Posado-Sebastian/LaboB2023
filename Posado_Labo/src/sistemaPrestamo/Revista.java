@@ -3,18 +3,19 @@ package sistemaPrestamo;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-public class Revista extends Lectura implements Prestable{
-    private Date fechaPublicacion;
+public class Revista extends Lectura{
+    private LocalDateTime fechaPublicacion;
 
-    public Revista(int codigo, String titulo, int fechaPublicacion, Date fechaPublicacion1) {
-        super(codigo, titulo, fechaPublicacion);
-        this.fechaPublicacion = fechaPublicacion1;
+    public Revista(int codigo, String titulo, int añoPublicacion, LocalDateTime fechaPublicacion) {
+        super(codigo, titulo, añoPublicacion);
+        this.fechaPublicacion = fechaPublicacion;
     }
-    public Date getFechaPublicacion() {
+
+    public LocalDateTime getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(Date fechaPublicacion) {
+    public void setFechaPublicacion(LocalDateTime fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 
@@ -27,32 +28,10 @@ public class Revista extends Lectura implements Prestable{
 
     @Override
     public boolean prestar() {
-        Date hoy= new Date();
-        boolean ver=false;
-        if (fechaPublicacion.getYear()==hoy.getYear()){
-            if (fechaPublicacion.getMonth()>=1 && fechaPublicacion.getMonth()<=3){
-                if (hoy.getMonth()>3){
-                    ver=true;
-                }
-            }else if(fechaPublicacion.getMonth()>=3 && fechaPublicacion.getMonth()<=6){
-                if (hoy.getMonth()<3 || hoy.getMonth()>6) {
-                    ver=true;
-                }
-            } else if (fechaPublicacion.getMonth()>=6 && fechaPublicacion.getMonth()<=9) {
-                if (hoy.getMonth()<6 || hoy.getMonth()>9){
-                    ver=true;
-                }
-            }
-        }else {
-            ver=true;
-        }
-        if (ver){
-            System.out.println("La revista se dará prestado");
+        if(fechaPublicacion.isBefore(LocalDateTime.now().minusMonths(3))){
             return true;
-        }else {
-            System.out.println("La revista no se dará prestado");
-            return false;
         }
+        return false;
     }
 
     @Override

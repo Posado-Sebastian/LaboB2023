@@ -1,6 +1,6 @@
 package sistemaPrestamo;
 
-public class Pantalon extends Ropa implements Prestable{
+public class Pantalon extends Ropa{
     private double medidaCintura;
     private double medidaCadera;
     private double largo;
@@ -38,8 +38,8 @@ public class Pantalon extends Ropa implements Prestable{
 
     @Override
     public String toString() {
-        return "Pantalon{" + "color="+getColor()+ ", material="+getMaterial()+ ", marca="+getMarca()+
-                ", medidaCintura=" + medidaCintura +
+        return "Pantalon{" +
+                " medidaCintura=" + medidaCintura +
                 ", medidaCadera=" + medidaCadera +
                 ", largo=" + largo +
                 '}';

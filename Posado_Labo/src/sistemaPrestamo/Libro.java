@@ -2,7 +2,7 @@ package sistemaPrestamo;
 
 import java.util.HashMap;
 
-public class Libro extends Lectura implements Prestable{
+public class Libro extends Lectura{
     private HashMap<Integer, Integer> capitulosPaginas;
 
     public Libro(int codigo, String titulo, int fechaPublicacion, HashMap<Integer, Integer> capitulosPaginas) {
@@ -27,7 +27,7 @@ public class Libro extends Lectura implements Prestable{
 
     @Override
     public boolean prestar() {
-        if( capitulosPaginas.size()%2==0){
+        if(capitulosPaginas.size()%2!=0){
             System.out.println("El libro se dará prestado");
             return true;
         }else{
