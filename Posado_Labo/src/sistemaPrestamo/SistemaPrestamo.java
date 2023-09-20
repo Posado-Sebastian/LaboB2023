@@ -3,17 +3,17 @@ package sistemaPrestamo;
 import java.util.HashMap;
 
 public class SistemaPrestamo {
-    private HashMap<Objeto, Boolean>objetoHashMap;
+    private HashMap<Prestable, Boolean>objetoHashMap;
 
-    public SistemaPrestamo(HashMap<Objeto, Boolean> objetoHashMap) {
+    public SistemaPrestamo(HashMap<Prestable, Boolean> objetoHashMap) {
         this.objetoHashMap = objetoHashMap;
     }
 
-    public HashMap<Objeto, Boolean> getObjetoHashMap() {
+    public HashMap<Prestable, Boolean> getObjetoHashMap() {
         return objetoHashMap;
     }
 
-    public void setObjetoHashMap(HashMap<Objeto, Boolean> objetoHashMap) {
+    public void setObjetoHashMap(HashMap<Prestable, Boolean> objetoHashMap) {
         this.objetoHashMap = objetoHashMap;
     }
 }
