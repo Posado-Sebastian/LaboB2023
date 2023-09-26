@@ -2,7 +2,7 @@ package centroEducativo;
 
 import java.time.LocalDateTime;
 
-public class ExamenOral extends Examen implements Aprobable{
+public class ExamenOral extends Examen {
     private NivelSatisfaccion nivelSatisfaccion;
 
     public ExamenOral(LocalDateTime fechaRealizacion, NivelSatisfaccion nivelSatisfaccion) {

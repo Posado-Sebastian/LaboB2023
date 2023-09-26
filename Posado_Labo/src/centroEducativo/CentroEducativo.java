@@ -7,6 +7,8 @@ public class CentroEducativo {
 
     public CentroEducativo(HashSet<Alumno> alumnos) {
         this.alumnos = alumnos;
+    }public CentroEducativo() {
+        this.alumnos = new HashSet<>();
     }
 
     public HashSet<Alumno> getAlumnos() {

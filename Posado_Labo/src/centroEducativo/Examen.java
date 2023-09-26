@@ -19,6 +19,6 @@ public abstract class Examen implements Aprobable {
 
     @Override
     public boolean aprobado() {
-        return true;
+        return false;
     }
 }

@@ -3,7 +3,7 @@ package centroEducativo;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-public class ExamenEscrito extends Examen implements Aprobable{
+public class ExamenEscrito extends Examen{
     private int duracion;
     private int nota;
 

@@ -1,8 +1,13 @@
 package sistemaEleccion;
 
+import java.util.HashSet;
+
 public class Partido {
     private NombrePartido nombrePartido;
     private Candidato candidato;
+    private String direccion;
+    private int cantAfiliados;
+    private HashSet<Partidario> enviadores;
 
     public Partido(NombrePartido nombrePartido, Candidato candidato) {
         this.nombrePartido = nombrePartido;
@@ -11,6 +16,7 @@ public class Partido {
     public Partido() {
         this.nombrePartido =null;
         this.candidato = new Candidato();
+        this.enviadores= new HashSet<>();
     }
 
     public NombrePartido getNombrePartido() {
@@ -27,6 +33,14 @@ public class Partido {
 
     public void setCandidato(Candidato candidato) {
         this.candidato = candidato;
+    }
+    public void agregarMensajero(Partidario partidario){
+        enviadores.add(partidario);
+    }
+    public void hacerCampaña(){
+        for (Partidario e: enviadores){
+             e.lema("Vote por "+nombrePartido+" para un mejor futuro");
+        }
     }
 
 }
