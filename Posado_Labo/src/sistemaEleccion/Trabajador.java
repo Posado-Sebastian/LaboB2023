@@ -11,8 +11,9 @@ public class Trabajador extends Persona implements Partidario{
     private int sueldo;
     private HashMap<DayOfWeek, Horario> horarioLaboral;
 
-    public Trabajador(String nombre, String apellido, int dni) {
+    public Trabajador(String nombre, String apellido, int dni, HashMap<DayOfWeek,Horario> horario) {
         super(nombre, apellido, dni);
+        this.horarioLaboral = horario;
     }
 
     public HashMap<DayOfWeek, Horario> getHorarioLaboral() {
@@ -49,7 +50,7 @@ public class Trabajador extends Persona implements Partidario{
     @Override
     public void lema(String mensaje) {
         if (verificarHorario()){
-            System.out.println("Yo, "+getNombre()+" te invito a que…"+ mensaje);
+            System.out.println("Yo, "+getNombre()+" te invito a que… "+ mensaje);
         }
     }
 }

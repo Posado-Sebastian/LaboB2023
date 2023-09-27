@@ -10,16 +10,21 @@ public class Main {
     public static void main(String[] args) {
         Partido partido = new Partido();
         partido.setNombrePartido(NombrePartido.El_poli_avanza);
-        Trabajador trabajador1 = new Trabajador("jose", "3", 2015);
-        Trabajador trabajador2 = new Trabajador("juan", "manuel", 2015);
+
         Horario horario = new Horario(LocalDateTime.of(1,1,1,1,0), LocalDateTime.of(1,1,1,23,0));
         Horario horario2 = new Horario(LocalDateTime.of(1,1,1,16,0), LocalDateTime.of(1,1,1,22,0));
         HashMap<DayOfWeek, Horario> horarioHashMap = new HashMap<>();
         HashMap<DayOfWeek, Horario> horarioHashMap2 = new HashMap<>();
         horarioHashMap.put(DayOfWeek.TUESDAY,horario);
-        trabajador1.setHorarioLaboral(horarioHashMap);
         horarioHashMap2.put(DayOfWeek.TUESDAY,horario2);
-        trabajador2.setHorarioLaboral(horarioHashMap2);
+        horarioHashMap.put(DayOfWeek.MONDAY,horario);
+        horarioHashMap2.put(DayOfWeek.MONDAY,horario2);
+        horarioHashMap.put(DayOfWeek.WEDNESDAY,horario);
+        horarioHashMap2.put(DayOfWeek.WEDNESDAY,horario2);
+        horarioHashMap.put(DayOfWeek.THURSDAY,horario);
+        horarioHashMap2.put(DayOfWeek.THURSDAY,horario2);
+        Trabajador trabajador1 = new Trabajador("jose", "3", 2015, horarioHashMap);
+        Trabajador trabajador2 = new Trabajador("juan", "manuel", 2015, horarioHashMap2);
         PalomaMensajera palomaMensajera1= new PalomaMensajera(Color.NEGRO,"pajaro", "paloma", true);
         PalomaMensajera palomaMensajera2= new PalomaMensajera(Color.NEGRO,"noosabevolar", "paloma", false);
         TelefonoMovil telefonoMovil1=new TelefonoMovil(true, 5);
