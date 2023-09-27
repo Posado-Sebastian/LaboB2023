@@ -30,9 +30,11 @@ public class Main {
         TelefonoMovil telefonoMovil1=new TelefonoMovil(true, 5);
         TelefonoMovil telefonoMovil2=new TelefonoMovil(true, 0);
         TelefonoMovil telefonoMovil3=new TelefonoMovil(false, 5);
+        TelefonoMovil telefonoMovil4=new TelefonoMovil(false, -1);
         partido.agregarMensajero(telefonoMovil1);
         partido.agregarMensajero(telefonoMovil2);
         partido.agregarMensajero(telefonoMovil3);
+        partido.agregarMensajero(telefonoMovil4);
         partido.agregarMensajero(trabajador1);
         partido.agregarMensajero(trabajador2);
         partido.agregarMensajero(palomaMensajera1);

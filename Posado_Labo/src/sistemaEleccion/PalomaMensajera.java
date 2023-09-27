@@ -19,9 +19,11 @@ public class PalomaMensajera extends Ave{
     }
 
     @Override
-    public void lema(String mensaje) {
+    public void lema(String mensaje) throws NoDisponible {
         if (sabeVolar){
             System.out.println("Lanzando un papelito que dice: " + mensaje);
+        }else {
+            throw new NoDisponible("La paloma no sabe volar");
         }
     }
 }

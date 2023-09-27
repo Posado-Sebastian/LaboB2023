@@ -48,8 +48,10 @@ public class Trabajador extends Persona implements Partidario{
     }
 
     @Override
-    public void lema(String mensaje) {
-        if (verificarHorario()){
+    public void lema(String mensaje) throws NoDisponible{
+        if (!verificarHorario()) {
+            throw new NoDisponible(getNombre() +" no esta disponible en este horario");
+        }else{
             System.out.println("Yo, "+getNombre()+" te invito a que… "+ mensaje);
         }
     }

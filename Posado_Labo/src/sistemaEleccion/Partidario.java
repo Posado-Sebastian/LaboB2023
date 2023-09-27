@@ -1,5 +1,5 @@
 package sistemaEleccion;
 
 public interface Partidario {
-    public void lema(String mensaje);
+    public void lema(String mensaje) throws NoDisponible;
 }

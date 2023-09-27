@@ -38,6 +38,6 @@ public abstract class Ave implements Partidario{
     }
 
     @Override
-    public void lema(String mensaje) {
+    public void lema(String mensaje) throws NoDisponible {
     }
 }

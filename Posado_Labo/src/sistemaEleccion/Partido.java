@@ -39,7 +39,11 @@ public class Partido {
     }
     public void hacerCampaña(){
         for (Partidario e: enviadores){
-             e.lema("Vote por "+nombrePartido+" para un mejor futuro");
+            try {
+                e.lema("Vote por " + nombrePartido + " para un mejor futuro");
+            }catch (NoDisponible s){
+                System.err.println(s);
+            }
         }
     }
 

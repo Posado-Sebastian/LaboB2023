@@ -80,9 +80,15 @@ public class TelefonoMovil implements Partidario{
     }
 
     @Override
-    public void lema(String mensaje) {
+    public void lema(String mensaje) throws NoDisponible{
         if (prendido && credito>0){
             System.out.println("Conectando con la antena más cercana " + mensaje);
+        }else if(!prendido && credito>0){
+            throw new NoDisponible("El telefono no esta prendido");
+        }else if(prendido && credito<=0){
+            throw new NoDisponible("El telefono no tiene credito");
+        }else {
+            throw new NoDisponible("El telefono no esta prendido ni tiene credito");
         }
     }
 }
