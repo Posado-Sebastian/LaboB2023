@@ -1,5 +1,5 @@
 package sistemaEleccion;
 
-public interface Partidario {
+public interface Mensajero {
     public void lema(String mensaje) throws NoDisponible;
 }

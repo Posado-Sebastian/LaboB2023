@@ -2,7 +2,7 @@ package sistemaEleccion;
 
 import pedidoPlato.Color;
 
-public abstract class Ave implements Partidario{
+public abstract class Ave implements Mensajero {
     private Color color;
     private String nombre;
     private String especie;

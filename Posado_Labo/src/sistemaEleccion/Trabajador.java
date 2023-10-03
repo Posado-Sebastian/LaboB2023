@@ -6,7 +6,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
-public class Trabajador extends Persona implements Partidario{
+public class Trabajador extends Persona implements Mensajero {
     private int cuil;
     private int sueldo;
     private HashMap<DayOfWeek, Horario> horarioLaboral;

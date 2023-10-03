@@ -7,7 +7,7 @@ public class Partido {
     private Candidato candidato;
     private String direccion;
     private int cantAfiliados;
-    private HashSet<Partidario> enviadores;
+    private HashSet<Mensajero> mensajeros;
 
     public Partido(NombrePartido nombrePartido, Candidato candidato) {
         this.nombrePartido = nombrePartido;
@@ -16,7 +16,7 @@ public class Partido {
     public Partido() {
         this.nombrePartido =null;
         this.candidato = new Candidato();
-        this.enviadores= new HashSet<>();
+        this.mensajeros= new HashSet<>();
     }
 
     public NombrePartido getNombrePartido() {
@@ -34,11 +34,36 @@ public class Partido {
     public void setCandidato(Candidato candidato) {
         this.candidato = candidato;
     }
-    public void agregarMensajero(Partidario partidario){
-        enviadores.add(partidario);
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public int getCantAfiliados() {
+        return cantAfiliados;
+    }
+
+    public void setCantAfiliados(int cantAfiliados) {
+        this.cantAfiliados = cantAfiliados;
+    }
+
+    public HashSet<Mensajero> getMensajeros() {
+        return mensajeros;
+    }
+
+    public void setMensajeros(HashSet<Mensajero> mensajeros) {
+        this.mensajeros = mensajeros;
+    }
+
+    public void agregarMensajero(Mensajero mensajero){
+        mensajeros.add(mensajero);
     }
     public void hacerCampaña(){
-        for (Partidario e: enviadores){
+        for (Mensajero e: mensajeros){
             try {
                 e.lema("Vote por " + nombrePartido + " para un mejor futuro");
             }catch (NoDisponible s){

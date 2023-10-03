@@ -1,6 +1,6 @@
 package sistemaEleccion;
 
-public class TelefonoMovil implements Partidario{
+public class TelefonoMovil implements Mensajero {
     private int nroSerie;
     private String fabricante;
     private String modelo;
