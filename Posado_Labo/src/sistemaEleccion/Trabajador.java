@@ -41,7 +41,7 @@ public class Trabajador extends Persona implements Mensajero {
     }
     public boolean verificarHorario(){
         Horario h = horarioLaboral.get(LocalDateTime.now().getDayOfWeek());
-        if(h.getInicio().getHour()<LocalDateTime.now().getHour() && h.getFinalizacion().getHour()>LocalDateTime.now().getHour()){
+        if(h.getInicio().getHour()<=LocalDateTime.now().getHour() && h.getFinalizacion().getHour()>=LocalDateTime.now().getHour()){
             return true;
         }
         return false;
