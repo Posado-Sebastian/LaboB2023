@@ -70,6 +70,7 @@ public abstract class Jugador extends Persona {
         this.posicion = posicion;
     }
     public abstract void verificarJugador() throws ExceptionJugador;
+    public abstract void actualizarDatos(int n, int n2, int n3);
 
     @Override
     public String toString() {

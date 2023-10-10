@@ -1,6 +1,9 @@
 package futbol;
 
+import pedidoPlato.Persona;
+import restaurante.ExceptionChef;
+
 public interface Contrato {
-    void contratar(Jugador jugador) throws ExceptionJugador;
-    void renovar(Jugador jugador);
+    void contratar(Persona jugador);
+    void renovar(Persona jugador);
 }

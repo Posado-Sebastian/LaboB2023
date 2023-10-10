@@ -1,8 +1,11 @@
 import empresaYempleado.Dia;
 
+import java.util.HashMap;
+
 public class Partido {
     private Equipo equipo1;
     private Equipo equipo2;
+    private HashMap<Jugador, Integer> goles;
     private Horario horarioPartido;
     private Dia diaPartido;
     public Partido(){
@@ -10,12 +13,14 @@ public class Partido {
         this.horarioPartido=null;
         this.equipo1=new Equipo();
         this.equipo2=new Equipo();
+        this.goles=new HashMap<>();
     }
-    public Partido(Dia diaPartido, Horario horarioPartido, Equipo equipo1, Equipo equipo2){
+    public Partido(Dia diaPartido, Horario horarioPartido, Equipo equipo1, Equipo equipo2, HashMap<Jugador,Integer> goles){
         this.diaPartido=diaPartido;
         this.horarioPartido=horarioPartido;
         this.equipo1=equipo1;
         this.equipo2=equipo2;
+        this.goles=goles;
     }
 
     public Equipo getEquipo1() {
@@ -43,6 +48,7 @@ public class Partido {
     public void setEquipo2(Equipo equipo2) {
         this.equipo2 = equipo2;
     }
+
 
     public void mostrarPartido(){
         int dia=0;
